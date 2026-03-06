@@ -1,0 +1,221 @@
+<!doctype html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>San Diego Zone Zero Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset & base */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Roboto', sans-serif; line-height: 1.6; color: #333; background-color: #f7f7f7; }
+
+        /* Header */
+        header {
+            background: #0d2b45;
+            color: #fff;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header nav a {
+            color: #fff;
+            margin-left: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+        header nav a:hover { color: #f05a28; }
+        .cta-button {
+            background-color: #f05a28;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: 0.3s;
+        }
+        .cta-button:hover { background-color: #f05a28; }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(142deg, #0d3b66, #144d85);
+            color: #fff;
+            text-align: center;
+            padding: 120px 20px 80px;
+        }
+        .hero h1 { font-size: 3em; margin-bottom: 20px; }
+        .hero p { font-size: 1.3em; margin-bottom: 30px; }
+        .hero .cta-button { font-size: 1.2em; }
+
+        /* Features Section */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            padding: 80px 50px;
+            background-color: #fff;
+        }
+        .feature-card {
+            background: #f7f7f7;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .feature-card h3 { margin-bottom: 15px; color: #2c6e91; }
+        .feature-card p { color: #555; }
+
+        /* About Section */
+        .about {
+            padding: 80px 50px;
+            text-align: center;
+            background: #f7f7f7;
+        }
+        .about h2 { margin-bottom: 20px; color: #2c6e91; }
+        .about p { max-width: 700px; margin: 0 auto 20px; color: #555; }
+        .about ul { list-style: disc; margin: 20px auto; max-width: 500px; text-align: left; }
+        .about ul li { margin-bottom: 10px; }
+
+        /* Testimonials Section */
+        .testimonials {
+            background: #2c6e91;
+            color: #fff;
+            padding: 80px 50px;
+            text-align: center;
+        }
+        .testimonials h2 { margin-bottom: 50px; }
+        .testimonial { margin-bottom: 30px; font-style: italic; }
+
+        /* Free Assessment CTA */
+        .assessment {
+            padding: 80px 50px;
+            background-color: #f05a28;
+            color: #fff;
+            text-align: center;
+        }
+        .assessment h2 { margin-bottom: 20px; }
+        .assessment p { margin-bottom: 30px; font-size: 1.1em; }
+        .assessment form input,
+        .assessment form button {
+            padding: 15px;
+            margin: 10px 5px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+        .assessment form input { width: 200px; }
+        .assessment form button {
+            background-color: #0d2b45;
+            color: #fff;
+            cursor: pointer;
+            font-weight: 700;
+        }
+        .assessment form button:hover { background-color: #2c6e91; }
+
+        /* Footer */
+        footer {
+            background: #0d2b45;
+            color: #fff;
+            text-align: center;
+            padding: 40px 20px;
+        }
+        footer a { color: #f05a28; text-decoration: none; }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+<header>
+       <div class="logo1">
+    <a href="index.html">
+        <img src="logo1.png" alt="San Diego Zone Zero Solutions Logo" style="height:82px;">
+    </a>
+</div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#assessment">Free Assessment</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+        <h1>Protect your home</h1>
+        <p>Unlock actionable strategies and measurable results with our expert&nbsp; consulting services.</p>
+        <a href="#assessment" class="cta-button">Start Your Free Assessment</a>
+    </section>
+
+    <!-- Features -->
+    <section class="features" id="services">
+        <div class="feature-card">
+            <h3>Zone Zero Score</h3>
+            <p>Measure your business efficiency with our proprietary metric.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Custom AI Solutions</h3>
+            <p>Tailored strategies that align with your business goals.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Quick Wins</h3>
+            <p>Fast improvements that create immediate impact on results.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Ongoing Support</h3>
+            <p>Continuous optimization to ensure sustainable growth.</p>
+        </div>
+</section>
+
+    <!-- About -->
+    <section class="about" id="about">
+        <h2>Why Choose San Diego Zone Zero Solutions?</h2>
+        <p>We help businesses harness AI to drive efficiency, growth, and measurable results.</p>
+        <ul>
+            <li>Proven track record in AI consulting</li>
+            <li>Custom solutions tailored to your business</li>
+            <li>Expert guidance every step of the way</li>
+        </ul>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <h2>What Our Clients Say</h2>
+        <p class="testimonial">"San Diego Zone Zero Solutions transformed our processes and boosted our ROI in just weeks!"</p>
+        <p class="testimonial">"Their Zone Zero Score gave us insights to protect our property."</p>
+    </section>
+
+    <!-- Free Assessment -->
+<section class="assessment" id="assessment">
+        <h2>Get Your Free Assessment</h2>
+        <p>Download our professional PDF to see how your home or business scores and where improvements are possible.</p>
+        <form action="download.php" method="POST">
+    <input type="text" name="name" placeholder="Name" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <button type="submit">Download Now</button>
+</form>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <p>Contact us: lawrence.knutsson <a href="mailto:info@sdzonezero.com">@sdzonezero.com</a></p>
+        <p>© 2026 San Diego Zone Zero Solutions. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>San Diego Zone Zero</title>
+</head>
+
+<body>
+</body>
+</html>
