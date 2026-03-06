@@ -195,16 +195,31 @@
 <section class="assessment" id="assessment">
         <h2>Get Your Free Assessment</h2>
         <p>Download our professional PDF to see how your home or business scores and where improvements are possible.</p>
-        <form action="download.php" method="POST">
-    <input type="text" name="name" placeholder="Name" required>
-    <input type="email" name="email" placeholder="Email" required>
-    <button type="submit">Download Now</button>
-</form>
-    </section>
-
-    <!-- Footer -->
+<div style="max-width: 400px; margin: auto; text-align: center;">
+  <form action="https://formspree.io/f/mqeykapb" method="POST">
+    <label>
+      Name:<br>
+      <input type="text" name="name" required style="width:100%; padding:8px; margin-bottom:10px;">
+    </label><br>
+    <label>
+      Email:<br>
+      <input type="email" name="email" required style="width:100%; padding:8px; margin-bottom:10px;">
+    </label><br>
+    <button type="submit" style="
+      padding: 10px 20px; 
+      background-color: #1a73e8; 
+      color: white; 
+      border: none; 
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+    ">Submit & Download PDF</button>
+  </form>
+</div>
+	
+	<!-- Footer -->
     <footer id="contact">
-        <p>Contact us: lawrence.knutsson <a href="mailto:info@sdzonezero.com">@sdzonezero.com</a></p>
+        <p>Contact us: info <a href="mailto:info@sdzonezero.com">@sdzonezero.com</a></p>
         <p>© 2026 San Diego Zone Zero Solutions. All Rights Reserved.</p>
     </footer>
 
@@ -213,7 +228,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>San Diego Zone Zero</title>
+<title>San Diego Zone Zero Solutions</title>
 </head>
 
 <body>
