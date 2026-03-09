@@ -139,7 +139,7 @@
 </div>
         <nav>
             <a href="#home">Home</a>
-            <a href="#about">About</a>
+            <a href="#about.html">About</a>
             <a href="#services">Services</a>
             <a href="#assessment">Free Assessment</a>
             <a href="#contact">Contact</a>
@@ -148,7 +148,7 @@
 
     <!-- Hero -->
     <section class="hero" id="home">
-        <h1>Protect your home</h1>
+        <h1>Protect Your Home</h1>
         <p>Unlock actionable strategies and measurable results with our expert&nbsp; consulting services.</p>
         <a href="#assessment" class="cta-button">Start Your Free Assessment</a>
     </section>
@@ -195,42 +195,90 @@
 <section class="assessment" id="assessment">
         <h2>Get Your Free Assessment</h2>
         <p>Download our professional PDF to see how your home or business scores and where improvements are possible.</p>
-<div style="max-width: 400px; margin: auto; text-align: center;">
-  <form action="https://formspree.io/f/mqeykapb" method="POST">
-    <label>
-      Name:<br>
-      <input type="text" name="name" required style="width:100%; padding:8px; margin-bottom:10px;">
-    </label><br>
-    <label>
-      Email:<br>
-      <input type="email" name="email" required style="width:100%; padding:8px; margin-bottom:10px;">
-    </label><br>
-    <button type="submit" style="
-      padding: 10px 20px; 
-      background-color: #1a73e8; 
-      color: white; 
-      border: none; 
-      border-radius: 6px;
-      font-weight: bold;
-      cursor: pointer;
-    ">Download PDF</button>
-  </form>
-</div>
+
+	<!-- Your form goes here (Step 1) -->
+
+  <div style="max-width: 400px; margin: auto; text-align: center;">
+    <form action="https://formspree.io/f/mqeykapb" method="POST" data-form-success="Thank you! <a href='SD_Zone_Zero_Free_Assessment_Pilot.pdf' target='_blank'>Click here to download the PDF</a>." id="pilotForm">
+      <label>
+        Name:<br>
+        <input type="text" name="name" required style="width:100%; padding:8px; margin-bottom:10px;">
+      </label><br>
+      <label>
+        Email:<br>
+        <input type="email" name="email" required style="width:100%; padding:8px; margin-bottom:10px;">
+      </label><br>
+      <button type="submit" style="
+        padding: 10px 20px; 
+        background-color: #2c6e91; 
+        color: white; 
+        border: none; 
+        border-radius: 6px;
+        font-weight: bold;
+        cursor: pointer;
+      ">Submit</button>
+    </form>
+    <div id="formSuccessMessage" style="margin-top: 15px; font-weight:bold; color: green;"></div>
+  </div>
+
+  <!-- Paste the JavaScript here -->
+<script>
+  const form = document.getElementById('pilotForm');
+  const successDiv = document.getElementById('formSuccessMessage');
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault(); // prevent default page reload
+
+    const action = form.getAttribute('action');
+    const data = new FormData(form);
+
+    fetch(action, {
+      method: 'POST',
+      body: data,
+      headers: {
+        'Accept': 'application/json'
+      }
+    }).then(response => {
+      if (response.ok) {
+        const message = form.getAttribute('data-form-success');
+        successDiv.innerHTML = message;
+        form.reset();
+      } else {
+        successDiv.innerHTML = 'Oops! There was a problem submitting the form.';
+      }
+    }).catch(() => {
+      successDiv.innerHTML = 'Oops! There was a problem submitting the form.';
+    });
+  });
+  </script>
 	
-	<!-- Footer -->
+	</section>
+
+<!-- Footer -->
     <footer id="contact">
         <p>Contact us: <a href="mailto:info@sdzonezero.com">info@sdzonezero.com</a></p>
         <p>© 2026 San Diego Zone Zero Solutions. All Rights Reserved.</p>
     </footer>
 
-</body>
-</html>
+
 <html>
 <head>
 <meta charset="utf-8">
 <title>San Diego Zone Zero Solutions</title>
 </head>
 
+	<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pilot Program</title>
+</head>	
 <body>
+
+  
+
 </body>
+</html>
+	</html>
+	</body>
 </html>
