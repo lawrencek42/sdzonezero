@@ -213,12 +213,18 @@ border-radius:2px;
 	
 /* Footer */
         footer {
-            background: #0d2b45;
-            color: #fff;
-            text-align: center;
-            padding: 40px 20px;
-        }
-        footer a { color: #f05a28; text-decoration: none; }
+            background:#0d2b45;
+text-align:center;
+padding:2rem;
+color:#fff;
+font-size:.85rem;
+}
+
+footer p{
+margin:0;
+line-height:1.4;
+}
+                footer a { color: #f05a28; text-decoration: none; }
 
 @media(max-width:700px){
 
@@ -227,7 +233,7 @@ grid-template-columns:1fr;
 }
 
 .hero h1{
-font-size:2.3rem;
+font-size:1.5rem;
 }
 
 }
@@ -349,16 +355,70 @@ eligibility, and avoid last-minute contractor shortages before the deadline.
 <p>
 Download our homeowner pilot guide to see exactly what Zone Zero means for your property.
 </p>
+	
+	<!-- Your form goes here (Step 1) -->
 
-<a class="btn" href="pilot-program.pdf">Download the Pilot Guide</a>
+  <div style="max-width: 400px; margin: auto; text-align: center;">
+    <form action="https://formspree.io/f/mqeykapb" method="POST" data-form-success="Thank you! <a href='SD_Zone_Zero_Free_Assessment_Pilot.pdf' target='_blank'>Click here to download the PDF</a>." id="pilotForm">
+      <label>
+        Name:<br>
+        <input type="text" name="name" required style="width:100%; padding:8px; margin-bottom:10px;">
+      </label><br>
+      <label>
+        Email:<br>
+        <input type="email" name="email" required style="width:100%; padding:8px; margin-bottom:10px;">
+      </label><br>
+      <button type="submit" style="
+        padding: 10px 20px; 
+        background-color: #f05a28;
+        color: white; 
+        border: none; 
+        border-radius: 6px;
+        font-weight: bold;
+        cursor: pointer;
+      ">Submit</button>
+    </form>
+    <div id="formSuccessMessage" style="margin-top: 15px; font-weight:bold; color: green;"></div>
+  </div>
+
+  <!-- Paste the JavaScript here -->
+<script>
+  const form = document.getElementById('pilotForm');
+  const successDiv = document.getElementById('formSuccessMessage');
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault(); // prevent default page reload
+
+    const action = form.getAttribute('action');
+    const data = new FormData(form);
+
+    fetch(action, {
+      method: 'POST',
+      body: data,
+      headers: {
+        'Accept': 'application/json'
+      }
+    }).then(response => {
+      if (response.ok) {
+        const message = form.getAttribute('data-form-success');
+        successDiv.innerHTML = message;
+        form.reset();
+      } else {
+        successDiv.innerHTML = 'Oops! There was a problem submitting the form.';
+      }
+    }).catch(() => {
+      successDiv.innerHTML = 'Oops! There was a problem submitting the form.';
+    });
+  });
+  </script>
 
 </div>
 
 </div>
 
 <footer>
-
-© 2026 San Diego Zone Zero Solutions | San Diego, California
+<p>Contact us: <a href="mailto:info@sdzonezero.com">info@sdzonezero.com</a></p>
+	<p>2026 San Diego Zone Zero Solutions | San Diego, California</p>
 
 </footer>
 
