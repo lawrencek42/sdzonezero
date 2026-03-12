@@ -6,6 +6,16 @@
     <title>San Diego Zone Zero Solutions</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
+		:root{
+--navy:#0d2b45;
+--safety-orange:#f05a28;
+--safety-orange:#f05a28;
+--lightsand:#f7f7f7;
+--safety-orange:#f05a28;
+--coastal:#2c6e91;
+--white:#1a1a1a;
+}
+
         /* Reset & base */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Roboto', sans-serif; line-height: 1.6; color: #333; background-color: #f7f7f7; }
@@ -38,17 +48,33 @@
         }
         .cta-button:hover { background-color: #f05a28; }
 
-        /* Hero Section */
+       /* Alert */
+		.alert{
+  background:var(--safety-orange);
+  color:white;
+  text-align:center;
+  padding:1rem;
+  font-weight:600;
+}
+		
+		/* Hero Section */
         .hero {
-            background: linear-gradient(142deg, #0d3b66, #144d85);
-            color: #fff;
+            background: linear-gradient(rgba(13,43,69,0.85), rgba(13,43,69,0.85)),
+            url("hero-bg3.jpg");
+			color: #fff;
             text-align: center;
-            padding: 120px 20px 80px;
+            padding: 120px 20px 80px;			
+			background-size: cover;
+			background-position: center 82%;
+			padding: 7rem 2rem;
+			text-align: center;
         }
         .hero h1 { font-size: 3em; margin-bottom: 20px; }
         .hero p { font-size: 1.3em; margin-bottom: 30px; }
         .hero .cta-button { font-size: 1.2em; }
-
+html{
+scroll-behavior:smooth;
+}
         /* Features Section */
         .features {
             display: grid;
@@ -92,7 +118,115 @@
         .testimonials h2 { margin-bottom: 50px; }
         .testimonial { margin-bottom: 30px; font-style: italic; }
 
-        /* Free Assessment CTA */
+       /* Service Area */	
+.service-area {
+    padding: 90px 50px;
+    background: linear-gradient(160deg, #0d2b45 0%, #1a4a6e 60%, #2c6e91 100%);
+    color: #fff;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-area::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle at 20% 80%, rgba(240,90,40,0.08) 0%, transparent 50%),
+                      radial-gradient(circle at 80% 20%, rgba(44,110,145,0.15) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.service-area-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.service-area-badge {
+    display: inline-block;
+    background: rgba(240,90,40,0.15);
+    border: 1px solid rgba(240,90,40,0.4);
+    color: #f07a58;
+    font-size: 0.78em;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+.service-area h2 {
+    font-size: 2.4em;
+    font-weight: 700;
+    margin-bottom: 18px;
+    line-height: 1.2;
+}
+
+.service-area h2 span {
+    color: #f05a28;
+}
+
+.service-area-intro {
+    font-size: 1.05em;
+    color: rgba(255,255,255,0.8);
+    max-width: 640px;
+    margin: 0 auto 50px;
+    line-height: 1.7;
+}
+
+.areas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    gap: 14px;
+    margin-bottom: 50px;
+    text-align: left;
+}
+
+.area-card {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 10px;
+    padding: 16px 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: background 0.25s, transform 0.25s, border-color 0.25s;
+    cursor: default;
+}
+
+.area-card:hover {
+    background: rgba(240,90,40,0.15);
+    border-color: rgba(240,90,40,0.4);
+    transform: translateY(-3px);
+}
+
+.area-card-icon {
+    width: 28px;
+    height: 28px;
+    background: rgba(240,90,40,0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.area-card-icon svg {
+    width: 14px;
+    height: 14px;
+    fill: #f05a28;
+}
+
+.area-card span {
+    font-size: 0.95em;
+    font-weight: 500;
+    color: #fff;
+}
+		
+		/* Free Assessment CTA */
         .assessment {
             padding: 80px 50px;
             background-color: #f05a28;
@@ -138,19 +272,24 @@
     </a>
 </div>
         <nav>
-            <a href="home">Home</a>
+            <a href="#home.html">Home</a>
             <a href="#about.html">About</a>
-            <a href="services">Services</a>
-            <a href="assessment">Free Assessment</a>
-            <a href="contact">Contact</a>
+            <a href="#services.html">Services</a>
+            <a href="#assessment.html">Free Assessment</a>
+            <a href="#contact">Contact</a>
         </nav>
     </header>
 
+	<!-- Alert Section (matches about.html) -->
+<div class="alert">
+  San Diego homeowners must comply with Zone Zero by <strong>February 2027</strong>.
+</div>
+	
     <!-- Hero -->
     <section class="hero" id="home">
-        <h1>Protect Your Home</h1>
+        <h1>San Diego Zone Zero Compliance Made Simple</h1>
         <p>Unlock actionable strategies and measurable results with our expert&nbsp; consulting services.</p>
-        <a href="#assessment" class="cta-button">Start Your Free Assessment</a>
+        <a href="#assessment" class="cta-button">Get Your Free Zone Zero Guide</a>
     </section>
 
     <!-- Features -->
@@ -185,13 +324,99 @@
     </section>
 
     <!-- Testimonials -->
-    <section class="testimonials">
-        <h2>What Our Clients Say</h2>
-        <p class="testimonial">"San Diego Zone Zero Solutions transformed our processes and boosted our ROI in just weeks!"</p>
-        <p class="testimonial">"Their Zone Zero Score gave us insights to protect our property."</p>
-    </section>
+    <section class="service-area" id="service-area">
+    <div class="service-area-inner">
 
-    <!-- Free Assessment -->
+        <div class="service-area-badge">📍 Where We Work</div>
+
+        <h2>Serving <span>San Diego County</span></h2>
+
+        <p class="service-area-intro" style="margin-bottom: 40px;">
+            If your property is located in a <strong style="color:#f05a28;">Very High Fire Hazard Severity Zone</strong>,
+            we can help you understand the steps needed for Zone Zero compliance before the
+            <strong style="color:#f05a28;">February 2027</strong> deadline.
+        </p>
+
+        <div class="areas-grid">
+            <div class="area-card">
+                <div class="area-card-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                </div>
+                <span>University City</span>
+            </div>
+            <div class="area-card">
+                <div class="area-card-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                </div>
+                <span>La Jolla</span>
+            </div>
+            <div class="area-card">
+                <div class="area-card-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                </div>
+                <span>Del Mar</span>
+            </div>
+            <div class="area-card">
+                <div class="area-card-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                </div>
+                <span>Rancho Santa Fe</span>
+            </div>
+            <div class="area-card">
+                <div class="area-card-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                </div>
+                <span>Poway</span>
+            </div>
+            <div class="area-card">
+                <div class="area-card-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                </div>
+                <span>Scripps Ranch</span>
+            </div>
+            <div class="area-card">
+                <div class="area-card-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                </div>
+                <span>Rancho Peñasquitos</span>
+            </div>
+            <div class="area-card">
+                <div class="area-card-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                </div>
+                <span>Carmel Valley</span>
+            </div>
+            <div class="area-card">
+                <div class="area-card-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                </div>
+                <span>Clairemont</span>
+            </div>
+            <div class="area-card">
+                <div class="area-card-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                </div>
+                <span>Encinitas</span>
+            </div>
+            <div class="area-card">
+                <div class="area-card-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                </div>
+                <span>Escondido</span>
+            </div>
+            <div class="area-card">
+                <div class="area-card-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                </div>
+                <span>Carlsbad</span>
+            </div>
+        </div>
+
+    </div>
+</section>
+	
+
+<!-- Free Assessment -->
 <section class="assessment" id="assessment">
         <h2>Get Your Free Assessment</h2>
         <p>Download our professional PDF to see how your home or business scores and where improvements are possible.</p>
@@ -199,7 +424,8 @@
 	<!-- Your form goes here (Step 1) -->
 
   <div style="max-width: 400px; margin: auto; text-align: center;">
-    <form action="https://formspree.io/f/mqeykapb" method="POST" data-form-success="Thank you! <a href='SD_Zone_Zero_Free_Assessment_Pilot.pdf' target='_blank'>Click here to download the PDF</a>." id="pilotForm">
+    <div id="download-guide">
+	  <form action="https://formspree.io/f/mqeykapb" method="POST" data-form-success="Thank you! <a href='SD_Zone_Zero_Free_Assessment_Pilot.pdf' target='_blank'>Click here to download the PDF</a>." id="pilotForm">
       <label>
         Name:<br>
         <input type="text" name="name" required style="width:100%; padding:8px; margin-bottom:10px;">
