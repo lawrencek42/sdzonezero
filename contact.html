@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Contact San Diego Zone Zero Solutions</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Display:wght@700;900&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+--charcoal:#0d2b45;
+--ember:#f05a28;
+--ember-dark:#f05a28;
+--ash:#f7f7f7;
+--smoke:#f05a28;
+--gold:#2c6e91;
+--white:#1a1a1a;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+font-family:'Roboto',sans-serif;
+background:var(--ash);
+color:var(--charcoal);
+line-height:1.6;
+}
+
+/* NAV */
+
+nav{
+background:var(--charcoal);
+padding:1.2rem 3rem;
+display:flex;
+align-items:center;
+justify-content:space-between;
+}
+
+.logo img{
+height:82px;
+}
+
+nav ul{
+list-style:none;
+display:flex;
+gap:2rem;
+}
+
+nav ul a{
+color:rgba(255,255,255,0.7);
+text-decoration:none;
+font-size:0.85rem;
+letter-spacing:.12em;
+text-transform:uppercase;
+font-weight:600;
+}
+
+nav ul a:hover{color:var(--ember);}
+
+/* HERO */
+
+.hero{
+background:linear-gradient(160deg, #0d2b45 0%, #1a4a6e 60%, #2c6e91 100%);
+padding:5rem 2rem;
+text-align:center;
+}
+
+.hero h1{
+font-size:2.5rem;
+color:white;
+margin-bottom:1rem;
+}
+
+.hero p{
+color:rgba(255,255,255,.7);
+max-width:650px;
+margin:auto;
+}
+
+/* CONTACT SECTION */
+
+.container{
+max-width:900px;
+margin:auto;
+padding:4rem 2rem;
+}
+
+.contact-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:3rem;
+}
+
+.contact-info h3{
+margin-bottom:1rem;
+}
+
+.contact-info p{
+margin-bottom:1rem;
+}
+
+/* FORM */
+
+form input,
+form textarea{
+width:100%;
+padding:10px;
+margin-bottom:15px;
+border:1px solid #ddd;
+border-radius:4px;
+font-size:1rem;
+}
+
+form textarea{
+height:120px;
+resize:vertical;
+}
+
+button{
+background:var(--ember);
+color:white;
+border:none;
+padding:12px 22px;
+font-weight:bold;
+cursor:pointer;
+border-radius:6px;
+}
+
+button:hover{
+background:var(--ember-dark);
+}
+
+/* FOOTER */
+
+footer{
+background:#0d2b45;
+text-align:center;
+padding:2rem;
+color:#fff;
+font-size:.85rem;
+}
+
+footer a{
+color:#f05a28;
+text-decoration:none;
+}
+
+@media(max-width:700px){
+
+.contact-grid{
+grid-template-columns:1fr;
+}
+
+.hero h1{
+font-size:1.7rem;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo">
+<a href="index.html">
+<img src="logo1.png" alt="San Diego Zone Zero Solutions Logo">
+</a>
+</div>
+
+<ul>
+<li><a href="index">Home</a></li>
+<li><a href="about">About</a></li>
+<li><a href="services">Services</a></li>
+<li><a href="contact">Contact</a></li>
+</ul>
+
+</nav>
+
+<section class="hero">
+
+<h1>Contact San Diego Zone Zero Solutions</h1>
+
+<p>
+Have questions about Zone Zero wildfire compliance or defensible space requirements?  
+Send us a message and we'll help you understand the next steps for your property.
+</p>
+
+</section>
+
+<div class="container">
+
+<div class="contact-grid">
+
+<div class="contact-info">
+
+<h3>Get in Touch</h3>
+
+<p>
+San Diego Zone Zero Solutions helps homeowners understand California's
+Zone Zero wildfire defensible space requirements before the February 2027 deadline.
+</p>
+
+<p><strong>Email:</strong><br>
+<a href="mailto:info@sdzonezero.com">info@sdzonezero.com</a></p>
+
+<p><strong>Location:</strong><br>
+San Diego, California</p>
+
+<p>
+We typically respond within 24 hours.
+</p>
+
+</div>
+
+<div>
+
+<form action="https://formspree.io/f/mqeykapb" method="POST">
+
+<input type="text" name="name" placeholder="Your Name" required>
+
+<input type="email" name="email" placeholder="Your Email" required>
+
+<textarea name="message" placeholder="How can we help?" required></textarea>
+
+<button type="submit">Send Message</button>
+
+</form>
+
+</div>
+
+</div>
+
+</div>
+
+<footer>
+
+<p>Contact us: <a href="mailto:info@sdzonezero.com">info@sdzonezero.com</a></p>
+<p>2026 San Diego Zone Zero Solutions | San Diego, California</p>
+
+</footer>
+
+</body>
+</html>
