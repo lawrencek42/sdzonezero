@@ -103,7 +103,96 @@ nav ul a.active {
 html{
 scroll-behavior:smooth;
 }
-        /* Features Section */
+  
+		/* Address Map */
+		.zone-map{
+padding:80px 40px;
+background:#ffffff;
+text-align:center;
+}
+
+.zone-map h2{
+color:#2c6e91;
+margin-bottom:15px;
+font-size:2rem;
+}
+
+.zone-map p{
+max-width:700px;
+margin:0 auto 40px;
+color:#555;
+}
+
+.map-container{
+max-width:1000px;
+margin:auto;
+border-radius:10px;
+overflow:hidden;
+box-shadow:0 8px 20px rgba(0,0,0,0.15);
+}
+	.zone-map{
+padding:80px 40px;
+background:#ffffff;
+text-align:center;
+}
+
+.zone-map h2{
+color:#2c6e91;
+font-size:2rem;
+margin-bottom:15px;
+}
+
+.zone-map p{
+max-width:700px;
+margin:0 auto 40px;
+color:#555;
+}
+
+.map-container{
+max-width:1100px;
+margin:auto;
+border-radius:10px;
+overflow:hidden;
+box-shadow:0 8px 20px rgba(0,0,0,0.15);
+}	
+		.zone-map{
+padding:90px 40px;
+background:#f4f7fa;
+text-align:center;
+}
+
+.zone-map-header{
+max-width:700px;
+margin:auto;
+margin-bottom:40px;
+}
+
+.map-icon{
+font-size:36px;
+margin-bottom:10px;
+}
+
+.zone-map h2{
+color:#0d2b45;
+font-size:2rem;
+margin-bottom:12px;
+}
+
+.zone-map p{
+color:#555;
+line-height:1.6;
+}
+
+.map-container{
+max-width:1100px;
+margin:auto;
+border-radius:12px;
+overflow:hidden;
+box-shadow:0 15px 35px rgba(0,0,0,0.18);
+border:4px solid white;
+}
+		
+		/* Features Section */
         .features {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -309,7 +398,7 @@ scroll-behavior:smooth;
   </nav>
 </header>
 
-	<!-- Alert Section (matches about.html) -->
+	<!-- Alert Section) -->
 <div class="alert">
   San Diego homeowners must comply with Zone Zero by <strong>February 2027</strong>. Don't wait — act now.
 </div>
@@ -321,35 +410,74 @@ scroll-behavior:smooth;
         <a href="#assessment" class="cta-button">Get Your Free Zone Zero Guide</a>
     </section>
 
-    <!-- Features -->
+    <!-- Address Map -->
+	
+	
+	<section class="zone-map">
+
+<div class="zone-map-header">
+
+
+
+<h2>Check Your Address for Zone Zero Compliance</h2>
+
+<p>
+Enter your address in the map below to see if your home is located in a
+<strong>Very High Fire Hazard Severity Zone</strong>.
+</p>
+
+</div>
+
+<div class="map-container">
+
+<iframe
+src="https://experience.arcgis.com/experience/5065c998b4b0462f9ec3c6c226c610a9"
+width="100%"
+height="550"
+style="border:0;"
+loading="lazy">
+</iframe>
+
+</div>
+
+</section>
+	
+	<!-- Features -->
     <section class="features" id="services">
         <div class="feature-card">
             <h3>Zone Zero Score</h3>
             <p>Measure your business efficiency with our proprietary metric.</p>
         </div>
         <div class="feature-card">
-            <h3>Custom AI Solutions</h3>
+            <h3>Compliance Plan</h3>
             <p>Tailored strategies that align with your business goals.</p>
         </div>
         <div class="feature-card">
-            <h3>Quick Wins</h3>
+            <h3>Quick Risk Reductions</h3>
             <p>Fast improvements that create immediate impact on results.</p>
         </div>
         <div class="feature-card">
-            <h3>Ongoing Support</h3>
+            <h3>Ongoing Compliance Support</h3>
             <p>Continuous optimization to ensure sustainable growth.</p>
         </div>
 </section>
 
     <!-- About -->
     <section class="about" id="about">
-        <h2>Why Choose San Diego Zone Zero Solutions?</h2>
-        <p>We help businesses harness AI to drive efficiency, growth, and measurable results.</p>
-        <ul>
-            <li>Proven track record in AI consulting</li>
-            <li>Custom solutions tailored to your business</li>
-            <li>Expert guidance every step of the way</li>
-        </ul>
+        <h2>Helping San Diego Homeowners Prepare for Zone Zero</h2>
+        <p>
+Preparing your property for Zone Zero compliance requires more than clearing brush.
+We help San Diego homeowners understand defensible space requirements and identify
+practical improvements that can reduce wildfire risk while preparing for the
+February 2027 compliance deadline.
+</p>
+
+<ul>
+<li>Focused expertise in Zone Zero and defensible space requirements</li>
+<li>Property-specific recommendations tailored to your home</li>
+<li>Guidance on the most effective wildfire risk reduction steps</li>
+<li>Clear explanations of regulations affecting San Diego homeowners</li>
+</ul>
     </section>
 
     <!-- Testimonials -->
@@ -371,7 +499,7 @@ scroll-behavior:smooth;
                 <div class="area-card-icon">
                     <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
                 </div>
-                <span>University City</span>
+                <span>Chula Vista</span>
             </div>
             <div class="area-card">
                 <div class="area-card-icon">
@@ -401,7 +529,7 @@ scroll-behavior:smooth;
                 <div class="area-card-icon">
                     <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
                 </div>
-                <span>Scripps Ranch</span>
+                <span>Oceanside</span>
             </div>
             <div class="area-card">
                 <div class="area-card-icon">
@@ -438,6 +566,24 @@ scroll-behavior:smooth;
                     <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
                 </div>
                 <span>Carlsbad</span>
+            </div>
+			<div class="area-card">
+                <div class="area-card-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                </div>
+                <span>Mission Valley</span>
+            </div>
+			<div class="area-card">
+                <div class="area-card-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                </div>
+                <span>Rancho Bernardo</span>
+            </div>
+			<div class="area-card">
+                <div class="area-card-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                </div>
+                <span>El Cajon</span>
             </div>
         </div>
 
