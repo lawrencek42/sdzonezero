@@ -415,31 +415,38 @@ border:4px solid white;
 	
 	<section class="zone-map">
 
-<div class="zone-map-header">
+		<div class="zone-map-header"></div>
 
 
 
-<h2>Check Your Address for Zone Zero Compliance</h2>
+<h2>Check Your Property’s Fire Hazard Zone</h2>
+
+<p>Use the map below to see if your property falls within a wildfire hazard zone that may be subject to Zone Zero requirements.</p>
+
+<h3>San Diego County Fire Hazard Severity Map</h3>
+
+<!-- Embedded wildfire hazard map viewer for San Diego County (FHSZ) -->
+<iframe
+  src="https://experience.arcgis.com/experience/03beab8511814e79a0e4eabf0d3e7247"
+  width="100%"
+  height="600"
+  style="border:0;"
+  title="San Diego County Fire Hazard Severity Zones"
+></iframe>
 
 <p>
-Enter your address in the map below to see if your home is located in a
-<strong>Very High Fire Hazard Severity Zone</strong>.
+  This interactive map lets you explore fire hazard severity zones across San Diego County — including
+  Local Responsibility Area (LRA) and State Responsibility Area (SRA) classifications.
+  Zoom in/out and click on parcels to view hazard designations. :contentReference[oaicite:1]{index=1}
 </p>
 
-</div>
+<p>
+  If you want to check your property directly by address, use the official California Fire Marshal’s map:
+</p>
 
-<div class="map-container">
-
-<iframe
-src="https://experience.arcgis.com/experience/5065c998b4b0462f9ec3c6c226c610a9"
-width="100%"
-height="550"
-style="border:0;"
-loading="lazy">
-</iframe>
-
-</div>
-
+<a href="https://osfm.fire.ca.gov/fhsz" target="_blank" class="btn">
+  Open CA Fire Hazard Severity Zone Viewer
+</a>
 </section>
 	
 	<!-- Features -->
@@ -600,7 +607,7 @@ February 2027 compliance deadline.
 
   <div style="max-width: 400px; margin: auto; text-align: center;">
     <div id="download-guide">
-	  <form action="https://formspree.io/f/mqeykapb" method="POST" data-form-success="Thank you! <a href='SD_Zone_Zero_Free_Assessment_Pilot.pdf' target='_blank'>Click here to download the PDF</a>." id="pilotForm">
+	  <form action="https://formspree.io/f/mqeykapb" method="POST" data-form-success="Thank you! <a href='SanDiego_Zone_Zero_Compliance_Packet.pdf' target='_blank'>Click here to download the PDF</a>." id="pilotForm">
       <label>
         Name:<br>
         <input type="text" name="name" required style="width:100%; padding:8px; margin-bottom:10px;">
