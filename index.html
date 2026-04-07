@@ -377,7 +377,44 @@ border:4px solid white;
             padding: 1.5rem;
         }
         footer a { color: #f05a28; text-decoration: none; }
-    </style>
+
+	/* Mobile Responsive Fix */
+@media screen and (max-width: 768px) {
+    nav {
+        flex-direction: column; /* Stacks logo above links */
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    nav ul {
+        gap: 1rem; /* Tightens space between Home, About, etc. */
+        padding: 0;
+        justify-content: center;
+        width: 100%;
+    }
+
+    nav ul a {
+        font-size: 0.75rem; /* Slightly smaller text for small screens */
+        letter-spacing: 0.05em;
+    }
+
+    /* Fixes the Hero text from being too large on mobile */
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    /* Prevents the form from being too wide */
+    .assessment form input {
+        width: 100% !important;
+        margin: 5px 0;
+    }
+}
+	
+	</style>
 </head>
 <body>
 
@@ -601,7 +638,7 @@ February 2027 compliance deadline.
 <!-- Free Assessment -->
 <section class="assessment" id="assessment">
         <h2>Get Your Free Assessment</h2>
-        <p>Download our professional PDF to see how your home or business scores and where improvements are possible.</p>
+        <p>Download our professional PDF to see how your home scores and where improvements are possible.</p>
 
 	<!-- Your form goes here (Step 1) -->
 
