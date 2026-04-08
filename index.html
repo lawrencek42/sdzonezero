@@ -824,18 +824,12 @@
       <p>
         Download our Compliance Checklist PDF guide — written specifically for San Diego homeowners. Understand exactly what Zone Zero requires, what you need to remove, and how to start building your compliance plan today.
       </p>
-                  <form
-        class="lead-form"
-        action="https://formspree.io/f/mqeykapb"
-        method="POST"
-        data-form-success="Thank you! <a href='SanDiego_Zone_Zero_Compliance_Packet.pdf' target='_blank' style='color:#f05a28; font-weight:700;'>Click here to download your free Zone Zero guide →</a>"
-        id="homepageGuideForm"
-      >
+                       <form class="lead-form" id="homepageGuideForm">
         <input type="text" name="name" placeholder="Your name" required />
         <input type="email" name="email" placeholder="Your email address" required />
         <button type="submit">Download the Free Guide</button>
       </form>
-      <div id="homepageFormSuccess" style="margin-top: 16px; font-weight: 600; color: #f05a28;"></div>
+      <div id="homepageFormSuccess" style="margin-top: 16px; font-weight: 600;"></div>
       <div class="lead-disclaimer">
         Your guide and occasional Zone Zero updates relevant to San Diego County homeowners.
       </div>
@@ -844,35 +838,39 @@
  
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      const homepageForm = document.getElementById('homepageGuideForm');
-      const homepageSuccess = document.getElementById('homepageFormSuccess');
+      const form = document.getElementById('homepageGuideForm');
+      const successDiv = document.getElementById('homepageFormSuccess');
  
-      if (homepageForm) {
-        homepageForm.addEventListener('submit', function(e) {
-          e.preventDefault();
-          e.stopPropagation();
-          const action = homepageForm.getAttribute('action');
-          const data = new FormData(homepageForm);
+      if (!form) return;
  
-          fetch(action, {
-            method: 'POST',
-            body: data,
-            headers: { 'Accept': 'application/json' }
-          }).then(response => {
-            if (response.ok) {
-              homepageSuccess.innerHTML = homepageForm.getAttribute('data-form-success');
-              homepageForm.reset();
-              homepageForm.style.display = 'none';
-            } else {
-              homepageSuccess.innerHTML = 'Oops! There was a problem. Please email us at info@sdzonezero.com';
-              homepageSuccess.style.color = '#fff';
-            }
-          }).catch(() => {
-            homepageSuccess.innerHTML = 'Oops! There was a problem. Please email us at info@sdzonezero.com';
-            homepageSuccess.style.color = '#fff';
-          });
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+ 
+        const data = new FormData(form);
+ 
+        fetch('https://formspree.io/f/mqeykapb', {
+          method: 'POST',
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        })
+        .then(function(response) {
+          if (response.ok) {
+            form.style.display = 'none';
+            successDiv.style.color = '#f05a28';
+            successDiv.innerHTML = 'Thank you! <a href="SanDiego_Zone_Zero_Compliance_Packet.pdf" target="_blank" style="color:#f05a28; font-weight:700; text-decoration:underline;">Click here to download your free Zone Zero guide →</a>';
+          } else {
+            successDiv.style.color = '#ffffff';
+            successDiv.innerHTML = 'Something went wrong. Please email us at <a href="mailto:info@sdzonezero.com" style="color:#f05a28;">info@sdzonezero.com</a>';
+          }
+        })
+        .catch(function() {
+          successDiv.style.color = '#ffffff';
+          successDiv.innerHTML = 'Something went wrong. Please email us at <a href="mailto:info@sdzonezero.com" style="color:#f05a28;">info@sdzonezero.com</a>';
         });
-      }
+ 
+        return false;
+      });
     });
   </script>
 
