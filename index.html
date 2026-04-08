@@ -822,13 +822,20 @@
     <div class="lead-inner">
       <h2>Get Your Free Zone Zero Guide</h2>
       <p>
-        Download our plain-language PDF guide — written specifically for San Diego homeowners. Understand exactly what Zone Zero requires, what you need to remove, and how to start building your compliance plan today.
+        Download our Compliance Checklist PDF guide — written specifically for San Diego homeowners. Understand exactly what Zone Zero requires, what you need to remove, and how to start building your compliance plan today.
       </p>
-      <form class="lead-form" onsubmit="return false;">
-        <input type="text" placeholder="Your name" />
-        <input type="email" placeholder="Your email address" />
+            <form
+        class="lead-form"
+        action="https://formspree.io/f/mqeykapb"
+        method="POST"
+        data-form-success="Thank you! <a href='SanDiego_Zone_Zero_Compliance_Packet.pdf' target='_blank' style='color:#f05a28; font-weight:700;'>Click here to download your free Zone Zero guide →</a>"
+        id="homepageGuideForm"
+      >
+        <input type="text" name="name" placeholder="Your name" required />
+        <input type="email" name="email" placeholder="Your email address" required />
         <button type="submit">Download the Free Guide</button>
       </form>
+      <div id="homepageFormSuccess" style="margin-top: 16px; font-weight: 600; color: #f05a28;"></div>
       <div class="lead-disclaimer">
         Your guide and occasional Zone Zero updates relevant to San Diego County homeowners.
       </div>
