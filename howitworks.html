@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How It Works | San Diego Zone Zero Solutions</title>
+  <meta name="description" content="Understand exactly what happens when you work with San Diego Zone Zero Solutions — from first contact to final documentation. Clear, honest, step-by-step." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --safety-orange: #f05a28;
+      --fire-deep:     #922B21;
+      --ember:         #E67E22;
+      --navy:          #0d2b45;
+      --coastal:       #2c6e91;
+      --charcoal:      #1a1a1a;
+      --slate:         #4A4A4A;
+      --lightsand:     #f7f7f7;
+      --fog:           #F9F6F1;
+      --white:         #ffffff;
+      --border:        #E0D8CC;
+      --serif:         'Playfair Display', Georgia, serif;
+      --sans:          'DM Sans', sans-serif;
+      --radius:        6px;
+      --shadow:        0 2px 16px rgba(0,0,0,0.08);
+      --shadow-lg:     0 8px 40px rgba(0,0,0,0.13);
+      --fire:          var(--safety-orange);
+      --sand:          var(--lightsand);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--sans);
+      background: var(--fog);
+      color: var(--charcoal);
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── ALERT BAR ── */
+    .alert-bar {
+      background: var(--fire);
+      color: var(--white);
+      text-align: center;
+      padding: 10px 20px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+    .alert-bar strong { font-weight: 700; }
+
+    /* ── NAV ── */
+    nav {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 40px;
+      height: 68px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 1px 8px rgba(0,0,0,0.06);
+    }
+    nav img { height: 42px; width: auto; }
+    nav ul { list-style: none; display: flex; gap: 32px; }
+    nav ul a {
+      text-decoration: none;
+      color: var(--slate);
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      transition: color 0.2s;
+    }
+    nav ul a:hover { color: var(--fire); }
+    nav ul a.active { color: var(--fire); font-weight: 600; }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--navy);
+      color: var(--white);
+      padding: 80px 40px 70px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 80% at 90% 50%, rgba(240,90,40,0.15) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 60% at 5% 80%, rgba(44,110,145,0.12) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .hero-inner {
+      max-width: 760px;
+      margin: 0 auto;
+      position: relative;
+      text-align: center;
+    }
+    .hero-eyebrow {
+      display: inline-block;
+      background: rgba(240,90,40,0.2);
+      border: 1px solid rgba(240,90,40,0.4);
+      color: #F1948A;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 40px;
+      margin-bottom: 24px;
+    }
+    .hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4.5vw, 3rem);
+      font-weight: 900;
+      line-height: 1.15;
+      margin-bottom: 20px;
+      color: var(--white);
+    }
+    .hero h1 em { font-style: italic; color: #F1948A; }
+    .hero-sub {
+      font-size: 1.05rem;
+      color: #C8C0B8;
+      max-width: 580px;
+      margin: 0 auto;
+      font-weight: 300;
+      line-height: 1.75;
+    }
+
+    /* ── SECTION WRAPPER ── */
+    section { padding: 80px 40px; }
+    .section-inner { max-width: 960px; margin: 0 auto; }
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--fire);
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-family: var(--serif);
+      font-size: clamp(1.7rem, 3.5vw, 2.3rem);
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--charcoal);
+      margin-bottom: 16px;
+    }
+    .section-title em { font-style: italic; color: var(--fire); }
+    .section-body {
+      font-size: 1rem;
+      color: var(--slate);
+      max-width: 620px;
+      line-height: 1.8;
+      margin-bottom: 48px;
+    }
+
+    /* ── PROCESS STEPS ── */
+    .process { background: var(--white); }
+    .steps {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0;
+      margin-top: 48px;
+      position: relative;
+    }
+    .step {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 32px;
+      padding: 36px 0;
+      border-bottom: 1px solid var(--border);
+      align-items: start;
+    }
+    .step:last-child { border-bottom: none; }
+    .step-num {
+      font-family: var(--serif);
+      font-size: 3.5rem;
+      font-weight: 900;
+      color: var(--border);
+      line-height: 1;
+      padding-top: 4px;
+    }
+    .step-content h3 {
+      font-family: var(--serif);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--charcoal);
+      margin-bottom: 8px;
+    }
+    .step-content p {
+      font-size: 0.95rem;
+      color: var(--slate);
+      line-height: 1.8;
+    }
+    .step-tag {
+      display: inline-block;
+      background: rgba(240,90,40,0.1);
+      color: var(--fire);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 40px;
+      margin-bottom: 10px;
+    }
+
+    /* ── FAQ ── */
+    .faq { background: var(--white); }
+    .faq-list {
+      margin-top: 48px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+    .faq-item {
+      background: var(--fog);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 28px;
+    }
+    .faq-item h3 {
+      font-family: var(--serif);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--charcoal);
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+    .faq-item p {
+      font-size: 0.88rem;
+      color: var(--slate);
+      line-height: 1.75;
+    }
+
+    /* ── LEAD CAPTURE ── */
+    .lead-capture { background: var(--navy); color: var(--white); }
+    .lead-inner {
+      max-width: 560px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .lead-inner h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.6rem, 3vw, 2.1rem);
+      font-weight: 700;
+      margin-bottom: 14px;
+      color: var(--white);
+    }
+    .lead-inner p {
+      color: #9A8F85;
+      font-size: 0.95rem;
+      line-height: 1.75;
+      margin-bottom: 32px;
+    }
+    .lead-form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .lead-form input {
+      padding: 13px 18px;
+      border-radius: var(--radius);
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.07);
+      color: var(--white);
+      font-family: var(--sans);
+      font-size: 0.9rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .lead-form input::placeholder { color: #6B6560; }
+    .lead-form input:focus { border-color: rgba(255,255,255,0.35); }
+    .lead-form button {
+      background: var(--fire);
+      color: var(--white);
+      padding: 14px;
+      border-radius: var(--radius);
+      border: none;
+      font-family: var(--sans);
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .lead-form button:hover { background: var(--fire-deep); }
+    .lead-disclaimer {
+      margin-top: 14px;
+      font-size: 0.78rem;
+      color: #5A5550;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy);
+      color: #5A6A7A;
+      text-align: center;
+      padding: 28px 20px;
+      font-size: 0.82rem;
+      border-top: 1px solid rgba(255,255,255,0.07);
+    }
+    footer a { color: #7A8A9A; text-decoration: none; }
+    footer a:hover { color: var(--white); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav { padding: 0 20px; }
+      nav ul { gap: 18px; }
+      nav ul a { font-size: 0.82rem; }
+      section { padding: 60px 20px; }
+      .hero { padding: 60px 20px 50px; }
+      .step { grid-template-columns: 56px 1fr; gap: 20px; }
+      .step-num { font-size: 2.5rem; }
+      .who-grid { grid-template-columns: 1fr; }
+      .doc-items { grid-template-columns: 1fr; }
+      .faq-list { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ALERT BAR -->
+  <div class="alert-bar">
+    San Diego homeowners must comply with Zone Zero by <strong>February 2027</strong>. Don't wait — act now.
+  </div>
+
+  <!-- NAV -->
+  <nav>
+    <a href="/index.html">
+      <img src="https://www.sdzonezero.com/logo1.png" alt="San Diego Zone Zero Solutions Logo" />
+    </a>
+    <ul>
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="/about.html" class="active">How It Works</a></li>
+      <li><a href="/services.html">Services</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <span class="hero-eyebrow">No Surprises. No Jargon.</span>
+      <h1>Here's <em>Exactly</em> What to Expect When You Work With Us.</h1>
+      <p class="hero-sub">
+        From your first question to your final report — a clear, honest walkthrough of how San Diego Zone Zero Solutions works.
+      </p>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="process">
+    <div class="section-inner">
+      <div class="section-label">The Process</div>
+      <h2 class="section-title">From First Contact to <em>Full Documentation</em></h2>
+      <p class="section-body">
+        Every engagement follows the same straightforward process. No surprises, no upsells mid-visit, no confusing jargon.
+      </p>
+      <div class="steps">
+
+        <div class="step">
+          <div class="step-num">01</div>
+          <div class="step-content">
+            <div class="step-tag">Get Started</div>
+            <h3>You Reach Out</h3>
+            <p>Contact us through the form, email, or by booking directly. Tell us your address, your situation, and what's driving your urgency — whether that's the February 2027 deadline, an insurance question, or just wanting to understand what Zone Zero means for your specific property.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num">02</div>
+          <div class="step-content">
+            <div class="step-tag">We Confirm</div>
+            <h3>We Review Your Property Zone</h3>
+            <p>Before your visit, we confirm your property's fire hazard designation using the official San Diego fire zone maps. This tells us exactly which Zone Zero requirements apply to your home so we arrive prepared — not guessing.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num">03</div>
+          <div class="step-content">
+            <div class="step-tag">The Visit</div>
+            <h3>We Walk Your Property Together</h3>
+            <p>Lawrence visits your property in person and walks the full perimeter with you — the 0–5 foot Zone Zero area, your fencing, vents, gutters, decking, and any attached structures. Everything is assessed against current Zone Zero standards. You'll understand exactly what's compliant, what needs attention, and in what order to prioritize.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num">04</div>
+          <div class="step-content">
+            <div class="step-tag">Your Deliverable</div>
+            <h3>You Receive Your Compliance Checklist or Full Report</h3>
+            <p>Depending on your service tier, you receive either a customized compliance checklist or a full written report with photo documentation. Both give you something concrete — a clear record of where your property stands and what steps you've taken toward compliance.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num">05</div>
+          <div class="step-content">
+            <div class="step-tag">After the Visit</div>
+            <h3>You Have Something to Show</h3>
+            <p>Your report is yours to keep, reference, and share. Show it to your HOA. Bring it to your insurance provider as evidence of progress. Use it as your roadmap as you make improvements over time. San Diego officials want to see that you're taking meaningful steps — and now you have the documentation to prove it.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq">
+    <div class="section-inner">
+      <div class="section-label">Common Questions</div>
+      <h2 class="section-title">Questions We Hear <em>Every Day</em></h2>
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <h3>Does Zone Zero apply to my property?</h3>
+          <p>Zone Zero applies to properties in San Diego's Very High Fire Hazard Severity Zones — roughly two-thirds of the city. Use the official map tools on our homepage to check your address, or contact us and we'll confirm for you.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>What exactly is the February 2027 deadline?</h3>
+          <p>February 2027 is when the City of San Diego begins proactive education and enforcement for existing owner-occupied homes. Rental properties are subject to Zone Zero requirements immediately. New construction has been subject to Zone Zero since February 2026.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Will your report be accepted by my insurer?</h3>
+          <p>Our report documents the specific Zone Zero improvements made to your property using recognized wildfire safety standards. This gives you documented evidence of mitigation steps taken — which insurers are required to consider under California's Safer from Wildfires regulations. We don't claim formal certification, but we help you build the paper trail that matters.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Do I have to remove everything within 5 feet of my home?</h3>
+          <p>Not everything — but most combustible materials must go. This includes wood mulch, dry vegetation, combustible fencing attached to the home, and debris. Non-combustible materials like gravel, pavers, and properly maintained trees can remain. We'll walk your specific property and tell you exactly what applies.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>How long does a property visit take?</h3>
+          <p>Most single-family home visits take between 60 and 90 minutes depending on property size and complexity. You'll receive your checklist or report within 48 hours of the visit.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>What if I'm not ready to book a visit yet?</h3>
+          <p>Start with our free Zone Zero guide — it gives you a plain-language overview of what Zone Zero requires and where most homes need attention. When you're ready to take the next step, we're here.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- LEAD CAPTURE -->
+  <section class="lead-capture" id="free-guide">
+    <div class="lead-inner">
+      <h2>Start With the Free Guide</h2>
+      <p>
+        Download our plain-language PDF — written specifically for San Diego homeowners. Understand what Zone Zero requires and where to start before your visit.
+      </p>
+      <form class="lead-form" id="aboutGuideForm">
+        <input type="text" name="name" placeholder="Your name" required />
+        <input type="email" name="email" placeholder="Your email address" required />
+        <button type="submit">Download the Free Guide</button>
+      </form>
+      <div id="aboutFormSuccess" style="margin-top: 16px; font-weight: 600;"></div>
+      <div class="lead-disclaimer">
+        Your guide and occasional Zone Zero updates relevant to San Diego County homeowners.
+      </div>
+    </div>
+  </section>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const form = document.getElementById('aboutGuideForm');
+      const successDiv = document.getElementById('aboutFormSuccess');
+
+      if (!form) return;
+
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        const data = new FormData(form);
+
+        fetch('https://formspree.io/f/mqeykapb', {
+          method: 'POST',
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        })
+        .then(function(response) {
+          if (response.ok) {
+            form.style.display = 'none';
+            successDiv.style.color = '#f05a28';
+            successDiv.innerHTML = 'Thank you! <a href="SanDiego_Zone_Zero_Compliance_Packet.pdf" target="_blank" style="color:#f05a28; font-weight:700; text-decoration:underline;">Click here to download your free Zone Zero guide →</a>';
+          } else {
+            successDiv.style.color = '#ffffff';
+            successDiv.innerHTML = 'Something went wrong. Please email us at <a href="mailto:info@sdzonezero.com" style="color:#f05a28;">info@sdzonezero.com</a>';
+          }
+        })
+        .catch(function() {
+          successDiv.style.color = '#ffffff';
+          successDiv.innerHTML = 'Something went wrong. Please email us at <a href="mailto:info@sdzonezero.com" style="color:#f05a28;">info@sdzonezero.com</a>';
+        });
+
+        return false;
+      });
+    });
+  </script>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 San Diego Zone Zero Solutions · San Diego, California · <a href="mailto:info@sdzonezero.com">info@sdzonezero.com</a></p>
+  </footer>
+
+</body>
+</html>
