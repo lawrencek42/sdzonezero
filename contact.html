@@ -1,281 +1,356 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | San Diego Zone Zero Solutions</title>
+  <meta name="description" content="Have questions about Zone Zero compliance for your San Diego property? Reach out to Lawrence — we typically respond within 24 hours." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --safety-orange: #f05a28;
+      --fire-deep:     #922B21;
+      --navy:          #0d2b45;
+      --coastal:       #2c6e91;
+      --charcoal:      #1a1a1a;
+      --slate:         #4A4A4A;
+      --lightsand:     #f7f7f7;
+      --fog:           #F9F6F1;
+      --white:         #ffffff;
+      --border:        #E0D8CC;
+      --serif:         'Playfair Display', Georgia, serif;
+      --sans:          'DM Sans', sans-serif;
+      --radius:        6px;
+      --fire:          var(--safety-orange);
+    }
 
-<title>Contact San Diego Zone Zero Solutions</title>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Display:wght@700;900&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+    body {
+      font-family: var(--sans);
+      background: var(--navy);
+      color: var(--charcoal);
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
 
-<style>
+    /* ── ALERT BAR ── */
+    .alert-bar {
+      background: var(--fire);
+      color: var(--white);
+      text-align: center;
+      padding: 10px 20px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+    .alert-bar strong { font-weight: 700; }
 
-:root{
---charcoal:#0d2b45;
---ember:#f05a28;
---ember-dark:#f05a28;
---ash:#f7f7f7;
---smoke:#f05a28;
---gold:#2c6e91;
---white:#1a1a1a;
-}
+    /* ── NAV ── */
+    nav {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 40px;
+      height: 68px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 1px 8px rgba(0,0,0,0.06);
+    }
+    nav img { height: 42px; width: auto; }
+    nav ul { list-style: none; display: flex; gap: 32px; }
+    nav ul a {
+      text-decoration: none;
+      color: var(--slate);
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      transition: color 0.2s;
+    }
+    nav ul a:hover { color: var(--fire); }
+    nav ul a.active { color: var(--fire); font-weight: 600; }
 
-*{margin:0;padding:0;box-sizing:border-box;}
+    /* ── CONTACT WRAP ── */
+    .contact-wrap {
+      min-height: calc(100vh - 108px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 40px;
+      position: relative;
+      overflow: hidden;
+    }
+    .contact-wrap::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 80% at 90% 50%, rgba(240,90,40,0.12) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 60% at 5% 80%, rgba(44,110,145,0.10) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .contact-inner {
+      max-width: 500px;
+      width: 100%;
+      position: relative;
+      text-align: center;
+    }
 
-body{
-font-family:'Roboto',sans-serif;
-background:var(--ash);
-color:var(--charcoal);
-line-height:1.6;
-}
+    /* ── EYEBROW ── */
+    .hero-eyebrow {
+      display: inline-block;
+      background: rgba(240,90,40,0.2);
+      border: 1px solid rgba(240,90,40,0.4);
+      color: #F1948A;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 40px;
+      margin-bottom: 20px;
+    }
 
-/* NAV */
+    /* ── HEADING ── */
+    .contact-inner h1 {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4vw, 2.6rem);
+      font-weight: 900;
+      line-height: 1.15;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+    .contact-inner h1 em {
+      font-style: italic;
+      color: #F1948A;
+    }
+    .contact-inner .tagline {
+      font-size: 0.92rem;
+      color: #9A8F85;
+      margin-bottom: 8px;
+      line-height: 1.6;
+    }
+    .contact-inner .redirect {
+      font-size: 0.78rem;
+      color: #5A5A5A;
+      margin-bottom: 40px;
+      line-height: 1.6;
+    }
+    .contact-inner .redirect a {
+      color: #7A8A9A;
+      text-decoration: none;
+    }
+    .contact-inner .redirect a:hover {
+      color: var(--white);
+      text-decoration: underline;
+    }
 
-nav{
-background:var(--charcoal);
-padding:1.2rem 3rem;
-display:flex;
-align-items:center;
-justify-content:space-between;
-}
+    /* ── FORM ── */
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      text-align: left;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      padding: 13px 16px;
+      border-radius: var(--radius);
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.07);
+      color: var(--white);
+      font-family: var(--sans);
+      font-size: 0.9rem;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      width: 100%;
+    }
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder { color: #6B6560; }
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: rgba(255,255,255,0.35);
+      box-shadow: 0 0 0 3px rgba(44,110,145,0.15);
+    }
+    .contact-form textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+    .contact-form button {
+      background: var(--fire);
+      color: var(--white);
+      padding: 14px;
+      border-radius: var(--radius);
+      border: none;
+      font-family: var(--sans);
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .contact-form button:hover {
+      background: var(--fire-deep);
+      transform: translateY(-1px);
+    }
 
-.logo img{
-height:82px;
-}
+    /* ── SUCCESS ── */
+    .form-success {
+      margin-top: 16px;
+      font-size: 0.92rem;
+      font-weight: 600;
+      text-align: center;
+      line-height: 1.6;
+    }
 
-nav ul{
-list-style:none;
-display:flex;
-gap:2rem;
-}
+    /* ── DIVIDER ── */
+    .or-divider {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 20px 0 14px;
+      color: #4A5A6A;
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .or-divider::before,
+    .or-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: rgba(255,255,255,0.08);
+    }
 
-nav ul a{
-color:rgba(255,255,255,0.7);
-text-decoration:none;
-font-size:0.85rem;
-letter-spacing:.12em;
-text-transform:uppercase;
-font-weight:600;
-}
+    /* ── DIRECT EMAIL ── */
+    .direct-email {
+      font-size: 0.85rem;
+      color: #5A5A5A;
+    }
+    .direct-email a {
+      color: #F1948A;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .direct-email a:hover { text-decoration: underline; }
 
-nav ul a:hover{color:var(--ember);}
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy);
+      color: #5A6A7A;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.82rem;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    footer a { color: #7A8A9A; text-decoration: none; }
+    footer a:hover { color: var(--white); }
 
-	 /* Alert */
-		
-		.alert{
-  background:var(--ember);
-  color:white;
-  text-align:center;
-  padding:1rem;
-  font-weight:600;
-}
-	
-	
-/* HERO */
-
-/* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(13,43,69,0.85), rgba(13,43,69,0.85)),
-            url("hero-bg3.jpg");
-			color: #fff;
-            text-align: center;
-            padding: 120px 20px 80px;			
-			background-size: cover;
-			background-position: center 82%;
-			padding: 7rem 2rem;
-			text-align: center;
-        }
-        .hero h1 { font-size: 3em; margin-bottom: 20px; }
-        .hero p { font-size: 1.3em; margin-bottom: 30px; }
-        .hero .cta-button { font-size: 1.2em; }
-html{
-scroll-behavior:smooth;
-}
-
-.hero h1{
-font-size:2.5rem;
-color:white;
-margin-bottom:1rem;
-}
-
-.hero p{
-color:rgba(255,255,255,.7);
-max-width:650px;
-margin:auto;
-}
-
-/* CONTACT SECTION */
-
-.container{
-max-width:900px;
-margin:auto;
-padding:4rem 2rem;
-}
-
-.contact-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:3rem;
-}
-
-.contact-info h3{
-margin-bottom:1rem;
-}
-
-.contact-info p{
-margin-bottom:1rem;
-}
-
-/* FORM */
-
-form input,
-form textarea{
-width:100%;
-padding:10px;
-margin-bottom:15px;
-border:1px solid #ddd;
-border-radius:4px;
-font-size:1rem;
-}
-
-form textarea{
-height:120px;
-resize:vertical;
-}
-
-button{
-background:var(--ember);
-color:white;
-border:none;
-padding:12px 22px;
-font-weight:bold;
-cursor:pointer;
-border-radius:6px;
-}
-
-button:hover{
-background:var(--ember-dark);
-}
-
-/* FOOTER */
-
-footer{
-background:#0d2b45;
-text-align:center;
-padding:2rem;
-color:#fff;
-font-size:.85rem;
-}
-
-footer a{
-color:#f05a28;
-text-decoration:none;
-}
-
-@media(max-width:700px){
-
-.contact-grid{
-grid-template-columns:1fr;
-}
-
-.hero h1{
-font-size:1.7rem;
-}
-
-}
-
-</style>
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav { padding: 0 20px; }
+      nav ul { gap: 18px; }
+      nav ul a { font-size: 0.82rem; }
+      .contact-wrap { padding: 60px 20px; min-height: auto; }
+    }
+  </style>
 </head>
-
 <body>
 
-<nav>
+  <!-- ALERT BAR -->
+  <div class="alert-bar">
+    San Diego homeowners must comply with Zone Zero by <strong>February 2027</strong>. Don't wait — act now.
+  </div>
 
-<div class="logo1">
-<a href="index.html">
-<img src="logo1.png" alt="San Diego Zone Zero Solutions Logo" style="height:82px;">
-</a>
-</div>
+  <!-- NAV -->
+  <nav>
+    <a href="/index.html">
+      <img src="https://www.sdzonezero.com/logo1.png" alt="San Diego Zone Zero Solutions Logo" />
+    </a>
+    <ul>
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="/howitworks.html">How It Works</a></li>
+      <li><a href="/services.html">Services</a></li>
+      <li><a href="/contact.html" class="active">Contact</a></li>
+    </ul>
+  </nav>
 
-<ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="about.html">About</a></li>
-<li><a href="services.html">Services</a></li>
-<li><a href="contact.html">Contact</a></li>
-</ul>
+  <!-- CONTACT -->
+  <div class="contact-wrap">
+    <div class="contact-inner">
 
-</nav>
+      <span class="hero-eyebrow">Here to Help</span>
+      <h1>Got a Question?<br /><em>Let's Talk.</em></h1>
+      <p class="tagline">Ask us anything about your property's Zone Zero compliance.</p>
+      <p class="redirect">
+        For fire emergencies or official inspections, please contact your local fire department directly.
+      </p>
 
-	
-	<!-- Alert Section ) -->
-<div class="alert">
-  San Diego homeowners must comply with Zone Zero by <strong>February 2027</strong>.
-</div>
-	
-	
-<section class="hero">
+      <form class="contact-form" id="contactForm">
+        <input type="text" name="name" placeholder="Your name" required />
+        <input type="email" name="email" placeholder="Your email address" required />
+        <textarea name="message" placeholder="Tell us about your property and we'll take it from there." required></textarea>
+        <button type="submit">Send Message →</button>
+      </form>
 
-<h1>Contact San Diego Zone Zero Solutions</h1>
+      <div id="contactFormSuccess" class="form-success"></div>
 
-<p>
-Have questions about Zone Zero wildfire compliance or defensible space requirements?  
-Send us a message and we'll help you understand the next steps for your property.
-</p>
+      <div class="or-divider">or</div>
+      <div class="direct-email">
+        Email us at&nbsp; &nbsp; <a href="mailto:info@sdzonezero.com">info@sdzonezero.com</a>
+      </div>
 
-</section>
+    </div>
+  </div>
 
-<div class="container">
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const form = document.getElementById('contactForm');
+      const successDiv = document.getElementById('contactFormSuccess');
 
-<div class="contact-grid">
+      if (!form) return;
 
-<div class="contact-info">
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
 
-<h3>Get in Touch</h3>
+        const data = new FormData(form);
 
-<p>
-San Diego Zone Zero Solutions helps homeowners understand California's
-Zone Zero wildfire defensible space requirements before the February 2027 deadline.
-</p>
+        fetch('https://formspree.io/f/mqeykapb', {
+          method: 'POST',
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        })
+        .then(function(response) {
+          if (response.ok) {
+            form.style.display = 'none';
+            successDiv.style.color = '#F1948A';
+            successDiv.innerHTML = "Thank you — we'll be in touch within 24 hours. In the meantime, <a href='SanDiego_Zone_Zero_Compliance_Packet.pdf' target='_blank' style='color:#f05a28; font-weight:700; text-decoration:underline;'>download the free Zone Zero guide here.</a>";
+          } else {
+            successDiv.style.color = '#F1948A';
+            successDiv.innerHTML = 'Something went wrong. Please email us at <a href="mailto:info@sdzonezero.com" style="color:#f05a28;">info@sdzonezero.com</a>';
+          }
+        })
+        .catch(function() {
+          successDiv.style.color = '#F1948A';
+          successDiv.innerHTML = 'Something went wrong. Please email us at <a href="mailto:info@sdzonezero.com" style="color:#f05a28;">info@sdzonezero.com</a>';
+        });
 
-<p><strong>Email:</strong><br>
-<a href="mailto:info@sdzonezero.com">info@sdzonezero.com</a></p>
+        return false;
+      });
+    });
+  </script>
 
-<p><strong>Location:</strong><br>
-San Diego, California</p>
-
-<p>
-We typically respond within 24 hours.
-</p>
-
-</div>
-
-<div>
-
-<form action="https://formspree.io/f/mqeykapb" method="POST">
-
-<input type="text" name="name" placeholder="Your Name" required>
-
-<input type="email" name="email" placeholder="Your Email" required>
-
-<textarea name="message" placeholder="How can we help?" required></textarea>
-
-<button type="submit">Send Message</button>
-
-</form>
-
-</div>
-
-</div>
-
-</div>
-
-<footer>
-
-<p>Contact us: <a href="mailto:info@sdzonezero.com">info@sdzonezero.com</a></p>
-<p>2026 San Diego Zone Zero Solutions | San Diego, California</p>
-
-</footer>
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 San Diego Zone Zero Solutions · San Diego, California · <a href="mailto:info@sdzonezero.com">info@sdzonezero.com</a></p>
+  </footer>
 
 </body>
 </html>
