@@ -748,17 +748,18 @@
   </section>
 
   <!-- APP TEASER -->
-  <section class="app-teaser">
+    <section class="app-teaser">
     <div class="app-teaser-inner">
       <div class="app-badge">⚡ Coming Soon</div>
       <h2>Check Your Home's Zone Zero Compliance — Instantly.</h2>
       <p>
         Our self-assessment web app walks you through your property step by step, identifies compliance gaps, and generates a prioritized action report. Available soon for just $19.99.
       </p>
-      <div class="app-notify-form">
-        <input type="email" placeholder="Enter your email to be notified" />
-        <button type="button">Notify Me</button>
-      </div>
+      <form class="app-notify-form" id="appNotifyForm">
+        <input type="email" name="email" placeholder="Enter your email to be notified" required />
+        <button type="submit">Notify Me</button>
+      </form>
+      <div id="appNotifySuccess" style="margin-top: 12px; font-size: 0.85rem; font-weight: 600; color: rgba(255,255,255,0.9);"></div>
       <div class="app-note">No spam. One email when it launches. That's it.</div>
     </div>
   </section>
@@ -867,6 +868,38 @@
         .catch(function() {
           successDiv.style.color = '#ffffff';
           successDiv.innerHTML = 'Something went wrong. Please email us at <a href="mailto:info@sdzonezero.com" style="color:#f05a28;">info@sdzonezero.com</a>';
+        });
+ 
+        return false;
+      });
+    });
+  </script>
+	
+	<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const appForm = document.getElementById('appNotifyForm');
+      const appSuccess = document.getElementById('appNotifySuccess');
+ 
+      if (!appForm) return;
+ 
+      appForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+ 
+        // Show confirmation immediately — before fetch completes
+        appForm.style.display = 'none';
+        appSuccess.innerHTML = "You're on the list! We'll email you the moment it launches.";
+ 
+        // Then silently send to Formspree in the background
+        const data = new FormData(appForm);
+        data.append('source', 'App Launch Notification');
+ 
+        fetch('https://formspree.io/f/mqeykapb', {
+          method: 'POST',
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        }).catch(function() {
+          // Fail silently — user already saw confirmation
         });
  
         return false;
