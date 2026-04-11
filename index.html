@@ -1,9 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TYKWSZ1JGK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-TYKWSZ1JGK');
+  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>San Diego Zone Zero Compliance Made Simple</title>
+  <title>San Diego Zone Zero | Embr Clearzone™ App Now Live</title>
+  <meta name="description" content="San Diego's first Zone Zero compliance app is live. Walk your property with Embr, get your Green/Yellow/Red home rating, and receive a personalized action plan in under 60 minutes. $19.99 at embrclearzone.app" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔥</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -25,892 +35,692 @@
       --radius:        6px;
       --shadow:        0 2px 16px rgba(0,0,0,0.08);
       --shadow-lg:     0 8px 40px rgba(0,0,0,0.13);
-
-      /* Mapped to brand colors */
       --fire:          var(--safety-orange);
       --sand:          var(--lightsand);
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     html { scroll-behavior: smooth; }
-
-    body {
-      font-family: var(--sans);
-      background: var(--fog);
-      color: var(--charcoal);
-      font-size: 16px;
-      line-height: 1.7;
-      -webkit-font-smoothing: antialiased;
-    }
+    body { font-family: var(--sans); background: var(--fog); color: var(--charcoal); font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
 
     /* ── ALERT BAR ── */
     .alert-bar {
-      background: var(--fire);
-      color: var(--white);
-      text-align: center;
-      padding: 10px 20px;
-      font-size: 0.875rem;
-      font-weight: 500;
-      letter-spacing: 0.02em;
+      background: var(--fire); color: var(--white); text-align: center;
+      padding: 11px 20px; font-size: 0.875rem; font-weight: 500; letter-spacing: 0.02em;
     }
     .alert-bar strong { font-weight: 700; }
+    .alert-bar a { color: white; text-decoration: underline; margin-left: 8px; font-weight: 600; }
 
     /* ── NAV ── */
     nav {
-      background: var(--white);
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 40px;
-      height: 68px;
-      position: sticky;
-      top: 0;
-      z-index: 100;
+      background: var(--white); border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 40px; height: 68px; position: sticky; top: 0; z-index: 100;
       box-shadow: 0 1px 8px rgba(0,0,0,0.06);
     }
     nav img { height: 42px; width: auto; }
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 32px;
-    }
-    nav ul a {
-      text-decoration: none;
-      color: var(--slate);
-      font-size: 0.9rem;
-      font-weight: 500;
-      letter-spacing: 0.02em;
-      transition: color 0.2s;
-    }
+    nav ul { list-style: none; display: flex; gap: 28px; align-items: center; }
+    nav ul a { text-decoration: none; color: var(--slate); font-size: 0.9rem; font-weight: 500; letter-spacing: 0.02em; transition: color 0.2s; }
     nav ul a:hover { color: var(--fire); }
-
-    /* ── HERO ── */
-    .hero {
-      background: var(--navy);
-      color: var(--white);
-      padding: 90px 40px 80px;
-      position: relative;
-      overflow: hidden;
+    .nav-app-btn {
+      background: var(--fire); color: white !important; padding: 8px 18px;
+      border-radius: 40px; font-weight: 600 !important; font-size: 0.85rem !important;
+      transition: background 0.2s, transform 0.15s !important;
     }
-    .hero::before {
+    .nav-app-btn:hover { background: var(--fire-deep) !important; transform: translateY(-1px); }
+
+    /* ── LAUNCH HERO ── */
+    .launch-hero {
+      background: var(--charcoal);
+      position: relative; overflow: hidden;
+      padding: 0;
+    }
+    .launch-hero::before {
       content: '';
-      position: absolute;
-      inset: 0;
+      position: absolute; inset: 0;
       background:
-        radial-gradient(ellipse 60% 80% at 90% 50%, rgba(240,90,40,0.18) 0%, transparent 70%),
-        radial-gradient(ellipse 40% 60% at 10% 80%, rgba(44,110,145,0.15) 0%, transparent 60%);
+        radial-gradient(ellipse 80% 60% at 100% 50%, rgba(240,90,40,0.22) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 80% at 0% 100%, rgba(13,43,69,0.8) 0%, transparent 60%);
       pointer-events: none;
     }
-    .hero-inner {
-      max-width: 860px;
-      margin: 0 auto;
-      position: relative;
+    .launch-grid {
+      position: absolute; inset: 0; pointer-events: none;
+      background-image: linear-gradient(rgba(240,90,40,0.04) 1px,transparent 1px), linear-gradient(90deg,rgba(240,90,40,0.04) 1px,transparent 1px);
+      background-size: 50px 50px;
     }
-    .hero-eyebrow {
-      display: inline-block;
-      background: rgba(192,57,43,0.25);
-      border: 1px solid rgba(192,57,43,0.5);
-      color: #F1948A;
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      padding: 5px 14px;
-      border-radius: 40px;
-      margin-bottom: 28px;
+    .launch-inner {
+      max-width: 1100px; margin: 0 auto; padding: 80px 40px;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+      position: relative; z-index: 2;
     }
-    .hero h1 {
-      font-family: var(--serif);
-      font-size: clamp(2.2rem, 5vw, 3.4rem);
-      font-weight: 900;
-      line-height: 1.15;
-      margin-bottom: 24px;
-      max-width: 780px;
+    .launch-left { }
+    .launch-announce {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(240,90,40,0.15); border: 1px solid rgba(240,90,40,0.4);
+      color: #F1948A; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.15em;
+      text-transform: uppercase; padding: 6px 16px; border-radius: 40px; margin-bottom: 28px;
     }
-    .hero h1 em {
-      font-style: italic;
-      color: #F1948A;
+    .launch-announce .dot {
+      width: 6px; height: 6px; border-radius: 50%; background: #f05a28;
+      animation: pulse-dot 2s infinite;
     }
-    .hero-sub {
-      font-size: 1.1rem;
-      color: #C8C0B8;
-      max-width: 620px;
-      margin-bottom: 40px;
-      font-weight: 300;
-      line-height: 1.75;
+    @keyframes pulse-dot { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(0.8)} }
+    .launch-h1 {
+      font-family: var(--serif); font-size: clamp(2.4rem,4.5vw,3.8rem);
+      font-weight: 900; line-height: 1.1; color: var(--white); margin-bottom: 22px;
     }
-    .hero-sub strong {
-      color: var(--white);
-      font-weight: 600;
+    .launch-h1 em { font-style: italic; color: #f05a28; }
+    .launch-sub {
+      font-size: 1.05rem; color: #9A9A9A; line-height: 1.75; margin-bottom: 36px;
+      font-weight: 300; max-width: 480px;
     }
-    .hero-ctas {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-      align-items: center;
+    .launch-sub strong { color: var(--white); font-weight: 600; }
+    .launch-ctas { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+    .btn-launch {
+      background: var(--fire); color: white; padding: 16px 32px;
+      border-radius: var(--radius); font-weight: 700; font-size: 1rem;
+      text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
+      transition: background 0.2s, transform 0.15s; border: none; cursor: pointer;
+      box-shadow: 0 4px 20px rgba(240,90,40,0.35);
     }
-    .btn-primary {
-      background: var(--fire);
-      color: var(--white);
-      padding: 14px 28px;
-      border-radius: var(--radius);
-      font-weight: 600;
-      font-size: 0.95rem;
-      text-decoration: none;
-      display: inline-block;
-      transition: background 0.2s, transform 0.15s;
-      border: none;
-      cursor: pointer;
+    .btn-launch:hover { background: var(--fire-deep); transform: translateY(-2px); box-shadow: 0 8px 32px rgba(240,90,40,0.45); }
+    .btn-ghost {
+      background: transparent; color: rgba(255,255,255,0.7); padding: 16px 28px;
+      border-radius: var(--radius); font-weight: 500; font-size: 0.95rem;
+      text-decoration: none; border: 1px solid rgba(255,255,255,0.2);
+      transition: all 0.2s; display: inline-block;
     }
-    .btn-primary:hover { background: var(--fire-deep); transform: translateY(-1px); }
-    .btn-outline {
-      background: transparent;
-      color: var(--white);
-      padding: 14px 28px;
-      border-radius: var(--radius);
-      font-weight: 500;
-      font-size: 0.95rem;
-      text-decoration: none;
-      display: inline-block;
-      border: 1px solid rgba(255,255,255,0.35);
-      transition: border-color 0.2s, background 0.2s;
+    .btn-ghost:hover { border-color: rgba(255,255,255,0.5); color: white; }
+    .launch-trust {
+      margin-top: 28px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
     }
-    .btn-outline:hover {
-      border-color: rgba(255,255,255,0.7);
-      background: rgba(255,255,255,0.07);
+    .trust-item { font-size: 0.8rem; color: #666; display: flex; align-items: center; gap: 6px; }
+    .trust-item::before { content: '✓'; color: #f05a28; font-weight: 700; }
+    .launch-features { list-style: none; margin-bottom: 28px; }
+    .launch-features li {
+      font-size: 0.9rem; color: #C8C4BE; padding: 7px 0;
+      display: flex; align-items: flex-start; gap: 10px;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      line-height: 1.4;
     }
-    .hero-deadline {
-      margin-top: 40px;
-      padding-top: 32px;
-      border-top: 1px solid rgba(255,255,255,0.1);
-      display: flex;
-      gap: 40px;
-      flex-wrap: wrap;
+    .launch-features li:last-child { border-bottom: none; }
+    .launch-features li::before { content: '✓'; color: #f05a28; font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+
+    /* App preview card */
+    .launch-right { }
+    .app-preview-card {
+      background: #1A1A1A; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px; overflow: hidden;
+      box-shadow: 0 24px 80px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.05);
+      animation: float 6s ease-in-out infinite;
     }
-    .hero-stat { }
-    .hero-stat .num {
-      font-family: var(--serif);
-      font-size: 2rem;
-      font-weight: 700;
-      color: var(--white);
-      line-height: 1;
+    @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+    .apc-bar {
+      background: #111; padding: 12px 18px;
+      display: flex; align-items: center; justify-content: space-between;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
     }
-    .hero-stat .label {
-      font-size: 0.8rem;
-      color: #9A8F85;
-      margin-top: 4px;
-      letter-spacing: 0.03em;
+    .apc-brand { display: flex; align-items: center; gap: 8px; font-size: 0.85rem; font-weight: 600; color: white; font-family: var(--sans); }
+    .apc-flame { width: 26px; height: 26px; background: #f05a28; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; box-shadow: 0 0 10px rgba(240,90,40,0.5); }
+    .apc-badge { background: rgba(39,174,96,0.15); border: 1px solid rgba(39,174,96,0.3); color: #5ddf8a; font-size: 0.68rem; padding: 3px 10px; border-radius: 20px; font-weight: 600; }
+    .apc-body { padding: 20px; }
+    .apc-zone-label { font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: #f05a28; font-weight: 600; margin-bottom: 8px; font-family: monospace; }
+    .apc-item {
+      background: #222; border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 8px; padding: 12px 14px; margin-bottom: 8px;
+      display: flex; align-items: center; gap: 10px;
     }
+    .apc-item.pass { border-color: rgba(39,174,96,0.3); background: rgba(39,174,96,0.04); }
+    .apc-item.fail { border-color: rgba(192,57,43,0.3); background: rgba(192,57,43,0.04); }
+    .apc-item .ic { font-size: 1.1rem; flex-shrink: 0; }
+    .apc-item .txt { flex: 1; font-size: 0.78rem; color: #CCC; line-height: 1.3; }
+    .apc-item .st { font-size: 0.9rem; flex-shrink: 0; }
+    .apc-rating {
+      background: linear-gradient(135deg, rgba(39,174,96,0.15), rgba(39,174,96,0.05));
+      border: 1px solid rgba(39,174,96,0.25); border-radius: 8px;
+      padding: 14px; text-align: center; margin-top: 12px;
+    }
+    .apc-rating .r-icon { font-size: 1.8rem; display: block; margin-bottom: 4px; }
+    .apc-rating .r-label { font-size: 0.75rem; font-weight: 700; color: #5ddf8a; letter-spacing: 0.1em; text-transform: uppercase; }
+    .apc-rating .r-sub { font-size: 0.68rem; color: #555; margin-top: 2px; }
+
+    /* ── STATS STRIP ── */
+    .stats-strip {
+      background: var(--white); border-bottom: 1px solid var(--border);
+      padding: 32px 40px;
+    }
+    .stats-inner {
+      max-width: 960px; margin: 0 auto;
+      display: flex; gap: 0; justify-content: space-around; flex-wrap: wrap;
+    }
+    .stat-block { text-align: center; padding: 0 24px; }
+    .stat-block .num {
+      font-family: var(--serif); font-size: 2.2rem; font-weight: 900;
+      color: var(--fire); line-height: 1; display: block;
+    }
+    .stat-block .lbl { font-size: 0.8rem; color: var(--slate); margin-top: 4px; }
+    .stat-divider { width: 1px; background: var(--border); }
+
+    /* ── HOW IT WORKS STRIP ── */
+    .how-strip { background: var(--fog); padding: 70px 40px; }
+    .how-inner { max-width: 960px; margin: 0 auto; }
+    .how-eyebrow { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--fire); margin-bottom: 12px; }
+    .how-title { font-family: var(--serif); font-size: clamp(1.8rem,3.5vw,2.6rem); font-weight: 900; line-height: 1.15; color: var(--charcoal); margin-bottom: 48px; }
+    .how-title em { font-style: italic; color: var(--fire); }
+    .how-steps { display: grid; grid-template-columns: repeat(4,1fr); gap: 32px; }
+    .how-step { position: relative; }
+    .how-step-num {
+      width: 44px; height: 44px; background: var(--fire); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 1rem; color: white; margin-bottom: 16px;
+    }
+    .how-step h3 { font-family: var(--serif); font-size: 1.05rem; font-weight: 700; color: var(--charcoal); margin-bottom: 8px; }
+    .how-step p { font-size: 0.88rem; color: var(--slate); line-height: 1.65; }
+    .how-step-arrow {
+      position: absolute; top: 22px; right: -20px;
+      color: var(--border); font-size: 1.2rem; font-weight: 300;
+    }
+    .how-cta { margin-top: 48px; text-align: center; }
 
     /* ── SECTION WRAPPER ── */
     section { padding: 80px 40px; }
     .section-inner { max-width: 960px; margin: 0 auto; }
-    .section-label {
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--fire);
-      margin-bottom: 12px;
-    }
-    .section-title {
-      font-family: var(--serif);
-      font-size: clamp(1.7rem, 3.5vw, 2.4rem);
-      font-weight: 700;
-      line-height: 1.2;
-      color: var(--charcoal);
-      margin-bottom: 16px;
-    }
+    .section-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--fire); margin-bottom: 12px; }
+    .section-title { font-family: var(--serif); font-size: clamp(1.7rem,3.5vw,2.4rem); font-weight: 700; line-height: 1.2; color: var(--charcoal); margin-bottom: 16px; }
     .section-title em { font-style: italic; color: var(--fire); }
-    .section-body {
-      font-size: 1rem;
-      color: var(--slate);
-      max-width: 640px;
-      line-height: 1.8;
-    }
+    .section-body { font-size: 1rem; color: var(--slate); max-width: 640px; line-height: 1.8; }
 
-    /* ── PROBLEM SECTION ── */
+    /* ── PROBLEM ── */
     .problem { background: var(--white); }
-    .problem-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      margin-top: 48px;
-      align-items: start;
-    }
-    .problem-card {
-      background: var(--fog);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 28px;
-    }
-    .problem-card .icon {
-      font-size: 1.6rem;
-      margin-bottom: 14px;
-    }
-    .problem-card h3 {
-      font-family: var(--serif);
-      font-size: 1.1rem;
-      font-weight: 700;
-      margin-bottom: 10px;
-      color: var(--charcoal);
-    }
-    .problem-card p {
-      font-size: 0.9rem;
-      color: var(--slate);
-      line-height: 1.75;
-    }
+    .problem-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 48px; align-items: start; }
+    .problem-card { background: var(--fog); border: 1px solid var(--border); border-radius: 8px; padding: 28px; }
+    .problem-card .icon { font-size: 1.6rem; margin-bottom: 14px; }
+    .problem-card h3 { font-family: var(--serif); font-size: 1.1rem; font-weight: 700; margin-bottom: 10px; color: var(--charcoal); }
+    .problem-card p { font-size: 0.9rem; color: var(--slate); line-height: 1.75; }
 
-    /* ── ABOUT / PERSONAL ── */
-    .about-strip {
-      background: var(--navy);
-      color: var(--white);
-    }
-    .about-strip-inner {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    .about-strip blockquote {
-      font-family: var(--serif);
-      font-size: clamp(1.25rem, 2.5vw, 1.65rem);
-      font-style: italic;
-      font-weight: 700;
-      line-height: 1.45;
-      color: var(--white);
-      border-left: 3px solid var(--fire);
-      padding-left: 28px;
-      margin-bottom: 28px;
-    }
-    .about-strip p {
-      color: #B0A89E;
-      font-size: 1rem;
-      line-height: 1.8;
-      font-weight: 300;
-      margin-bottom: 16px;
-    }
-    .about-strip p strong {
-      color: var(--white);
-      font-weight: 600;
-    }
-    .about-strip .sig {
-      margin-top: 28px;
-      font-size: 0.85rem;
-      color: #7A7068;
-      letter-spacing: 0.04em;
-      font-style: italic;
-    }
+    /* ── ABOUT ── */
+    .about-strip { background: var(--navy); color: var(--white); }
+    .about-strip-inner { max-width: 800px; margin: 0 auto; }
+    .about-strip blockquote { font-family: var(--serif); font-size: clamp(1.25rem,2.5vw,1.65rem); font-style: italic; font-weight: 700; line-height: 1.45; color: var(--white); border-left: 3px solid var(--fire); padding-left: 28px; margin-bottom: 28px; }
+    .about-strip p { color: #B0A89E; font-size: 1rem; line-height: 1.8; font-weight: 300; margin-bottom: 16px; }
+    .about-strip p strong { color: var(--white); font-weight: 600; }
+    .about-strip .sig { margin-top: 28px; font-size: 0.85rem; color: #7A7068; letter-spacing: 0.04em; font-style: italic; }
 
     /* ── SERVICES ── */
     .services { background: var(--fog); }
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      margin-top: 48px;
-    }
+    .services-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; margin-top: 48px; }
     .service-card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 32px 28px;
-      position: relative;
-      transition: box-shadow 0.2s, transform 0.2s;
+      background: var(--white); border: 1px solid var(--border); border-radius: 8px;
+      padding: 32px 28px; position: relative; transition: box-shadow 0.2s, transform 0.2s;
+      cursor: pointer;
     }
-    .service-card:hover {
-      box-shadow: var(--shadow-lg);
-      transform: translateY(-3px);
-    }
-    .service-card.featured {
-      border-color: var(--fire);
-      border-width: 2px;
-    }
-    .service-badge {
-      position: absolute;
-      top: -12px;
-      left: 24px;
-      background: var(--fire);
-      color: var(--white);
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      padding: 4px 12px;
-      border-radius: 40px;
-    }
-    .service-num {
-      font-family: var(--serif);
-      font-size: 2.2rem;
-      font-weight: 900;
-      color: var(--border);
-      line-height: 1;
-      margin-bottom: 16px;
-    }
-    .service-card h3 {
-      font-family: var(--serif);
-      font-size: 1.15rem;
-      font-weight: 700;
-      margin-bottom: 10px;
-      color: var(--charcoal);
-    }
-    .service-card p {
-      font-size: 0.88rem;
-      color: var(--slate);
-      line-height: 1.7;
-      margin-bottom: 20px;
-    }
-    .service-price {
-      font-weight: 700;
-      font-size: 1rem;
-      color: var(--fire);
-    }
-    .services-cta {
-      text-align: center;
-      margin-top: 36px;
-    }
-    .services-cta a {
-      color: var(--fire);
-      font-weight: 600;
-      text-decoration: none;
-      font-size: 0.95rem;
-      border-bottom: 1px solid currentColor;
-      padding-bottom: 2px;
-      transition: color 0.2s;
-    }
+    .service-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-3px); }
+    .service-card.featured { border-color: var(--fire); border-width: 2px; }
+    .service-badge { position: absolute; top: -12px; left: 24px; background: var(--fire); color: var(--white); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 4px 12px; border-radius: 40px; }
+    .service-num { font-family: var(--serif); font-size: 2.2rem; font-weight: 900; color: var(--border); line-height: 1; margin-bottom: 16px; }
+    .service-card h3 { font-family: var(--serif); font-size: 1.15rem; font-weight: 700; margin-bottom: 10px; color: var(--charcoal); }
+    .service-card p { font-size: 0.88rem; color: var(--slate); line-height: 1.7; margin-bottom: 20px; }
+    .service-price { font-weight: 700; font-size: 1rem; color: var(--fire); }
+    .service-link { display: inline-block; margin-top: 14px; font-size: 0.85rem; color: var(--fire); font-weight: 600; text-decoration: none; border-bottom: 1px solid currentColor; }
+    .services-cta { text-align: center; margin-top: 36px; }
+    .services-cta a { color: var(--fire); font-weight: 600; text-decoration: none; font-size: 0.95rem; border-bottom: 1px solid currentColor; padding-bottom: 2px; transition: color 0.2s; }
     .services-cta a:hover { color: var(--fire-deep); }
 
-    /* ── APP TEASER ── */
-    .app-teaser {
-      background: linear-gradient(135deg, var(--navy) 0%, var(--coastal) 100%);
-      color: var(--white);
+    /* ── APP LAUNCH SECTION ── */
+    .app-launch {
+      background: linear-gradient(135deg, var(--charcoal) 0%, #1a1a2e 100%);
+      color: var(--white); position: relative; overflow: hidden;
     }
-    .app-teaser-inner {
-      max-width: 760px;
-      margin: 0 auto;
-      text-align: center;
+    .app-launch::before {
+      content: ''; position: absolute; inset: 0; pointer-events: none;
+      background: radial-gradient(ellipse 60% 80% at 80% 50%, rgba(240,90,40,0.15) 0%, transparent 60%);
     }
-    .app-badge {
-      display: inline-block;
-      background: rgba(255,255,255,0.15);
-      border: 1px solid rgba(255,255,255,0.3);
-      color: rgba(255,255,255,0.9);
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      padding: 5px 14px;
-      border-radius: 40px;
-      margin-bottom: 24px;
+    .app-launch-inner { max-width: 960px; margin: 0 auto; position: relative; z-index: 2; }
+    .app-launch-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .app-launch-left { }
+    .al-badge {
+      display: inline-block; background: rgba(240,90,40,0.2); border: 1px solid rgba(240,90,40,0.4);
+      color: #F1948A; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.15em;
+      text-transform: uppercase; padding: 5px 14px; border-radius: 40px; margin-bottom: 20px;
     }
-    .app-teaser h2 {
-      font-family: var(--serif);
-      font-size: clamp(1.6rem, 3vw, 2.2rem);
-      font-weight: 700;
-      line-height: 1.25;
-      margin-bottom: 16px;
-    }
-    .app-teaser p {
-      font-size: 1rem;
-      color: rgba(255,255,255,0.75);
-      line-height: 1.75;
-      margin-bottom: 32px;
-      max-width: 560px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .app-notify-form {
-      display: flex;
-      gap: 12px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    .app-notify-form input {
-      padding: 13px 18px;
-      border-radius: var(--radius);
-      border: none;
-      font-family: var(--sans);
-      font-size: 0.9rem;
-      width: 260px;
-      outline: none;
-    }
-    .app-notify-form button {
-      background: var(--ember);
-      color: var(--white);
-      padding: 13px 24px;
-      border-radius: var(--radius);
-      border: none;
-      font-family: var(--sans);
-      font-weight: 700;
-      font-size: 0.9rem;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-    .app-notify-form button:hover { background: #CA6F1E; }
-    .app-note {
-      margin-top: 14px;
-      font-size: 0.78rem;
-      color: rgba(255,255,255,0.45);
-    }
+    .al-title { font-family: var(--serif); font-size: clamp(1.8rem,3.5vw,2.8rem); font-weight: 900; line-height: 1.15; margin-bottom: 18px; }
+    .al-title em { font-style: italic; color: #f05a28; }
+    .al-body { font-size: 0.95rem; color: #9A9A9A; line-height: 1.8; margin-bottom: 28px; }
+    .al-features { list-style: none; margin-bottom: 32px; }
+    .al-features li { font-size: 0.9rem; color: #CCC; padding: 6px 0; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .al-features li:last-child { border-bottom: none; }
+    .al-features li::before { content: '🔥'; flex-shrink: 0; }
+    .al-price { font-family: var(--serif); font-size: 1rem; color: #666; margin-bottom: 20px; }
+    .al-price strong { font-size: 1.6rem; color: var(--fire); }
 
-    /* ── MAP SECTION ── */
+    /* Mini phone mockup */
+    .app-launch-right { display: flex; justify-content: center; }
+    .phone-mock {
+      width: 260px; background: #111; border-radius: 32px;
+      border: 2px solid rgba(255,255,255,0.1); overflow: hidden;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+      animation: float 6s ease-in-out infinite 1s;
+    }
+    .phone-notch { background: #000; height: 28px; display: flex; align-items: center; justify-content: center; }
+    .phone-notch-pill { width: 80px; height: 8px; background: #222; border-radius: 4px; }
+    .phone-screen { padding: 16px 14px; }
+    .ps-header { display: flex; align-items: center; gap: 8px; margin-bottom: 14px; }
+    .ps-flame { width: 28px; height: 28px; background: #f05a28; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; }
+    .ps-title { font-size: 0.75rem; font-weight: 700; color: white; }
+    .ps-prog { height: 3px; background: #222; border-radius: 2px; margin-bottom: 14px; overflow: hidden; }
+    .ps-prog-fill { height: 100%; width: 68%; background: #f05a28; border-radius: 2px; }
+    .ps-item { background: #1a1a1a; border-radius: 6px; padding: 9px 10px; margin-bottom: 6px; }
+    .ps-item.ok { border-left: 2px solid #27AE60; }
+    .ps-item.bad { border-left: 2px solid #C0392B; }
+    .ps-item-title { font-size: 0.65rem; color: #CCC; margin-bottom: 4px; }
+    .ps-item-btns { display: flex; gap: 4px; }
+    .ps-btn { font-size: 0.58rem; padding: 2px 7px; border-radius: 3px; font-weight: 600; }
+    .ps-btn.yes { background: rgba(39,174,96,0.2); color: #5ddf8a; }
+    .ps-btn.no { background: rgba(192,57,43,0.2); color: #e07878; }
+    .ps-btn.na { background: rgba(74,74,106,0.3); color: #9898C8; }
+    .ps-rating { background: rgba(39,174,96,0.1); border: 1px solid rgba(39,174,96,0.2); border-radius: 6px; padding: 10px; text-align: center; margin-top: 10px; }
+    .ps-rating-icon { font-size: 1.4rem; display: block; }
+    .ps-rating-label { font-size: 0.62rem; color: #5ddf8a; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+
+    /* ── MAP ── */
     .map-section { background: var(--white); }
-    .map-cards {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
-      margin-top: 48px;
-      max-width: 720px;
-    }
-    .map-card {
-      background: var(--fog);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 32px 28px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-    .map-card-cta {
-      background: var(--navy);
-      border-color: var(--navy);
-    }
-    .map-card-cta h3,
-    .map-card-cta p { color: rgba(255,255,255,0.85); }
+    .map-cards { display: grid; grid-template-columns: repeat(2,1fr); gap: 24px; margin-top: 48px; max-width: 720px; }
+    .map-card { background: var(--fog); border: 1px solid var(--border); border-radius: 8px; padding: 32px 28px; display: flex; flex-direction: column; gap: 12px; }
     .map-card-icon { font-size: 2rem; }
-    .map-card h3 {
-      font-family: var(--serif);
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: var(--charcoal);
-      line-height: 1.3;
-    }
-    .map-card p {
-      font-size: 0.88rem;
-      color: var(--slate);
-      line-height: 1.7;
-      flex: 1;
-    }
-    .map-card .btn-primary {
-      display: inline-block;
-      text-align: center;
-      margin-top: 8px;
-    }
-    @media (max-width: 768px) {
-      .map-cards { grid-template-columns: 1fr; }
-    }
+    .map-card h3 { font-family: var(--serif); font-size: 1.1rem; font-weight: 700; color: var(--charcoal); line-height: 1.3; }
+    .map-card p { font-size: 0.88rem; color: var(--slate); line-height: 1.7; flex: 1; }
+    .map-card .btn-primary { display: inline-block; text-align: center; margin-top: 8px; }
 
     /* ── AREAS ── */
     .areas { background: var(--fog); }
-    .areas-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 32px;
-    }
-    .area-tag {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 40px;
-      padding: 7px 18px;
-      font-size: 0.85rem;
-      color: var(--slate);
-      font-weight: 500;
-    }
+    .areas-grid { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 32px; }
+    .area-tag { background: var(--white); border: 1px solid var(--border); border-radius: 40px; padding: 7px 18px; font-size: 0.85rem; color: var(--slate); font-weight: 500; }
 
-    /* ── FREE GUIDE / LEAD CAPTURE ── */
-    .lead-capture {
-      background: var(--navy);
-      color: var(--white);
-    }
-    .lead-inner {
-      max-width: 600px;
-      margin: 0 auto;
-      text-align: center;
-    }
-    .lead-inner h2 {
-      font-family: var(--serif);
-      font-size: clamp(1.6rem, 3vw, 2.2rem);
-      font-weight: 700;
-      margin-bottom: 14px;
-    }
-    .lead-inner p {
-      color: #9A8F85;
-      font-size: 0.95rem;
-      line-height: 1.75;
-      margin-bottom: 32px;
-    }
-    .lead-form {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-    .lead-form input {
-      padding: 13px 18px;
-      border-radius: var(--radius);
-      border: 1px solid rgba(255,255,255,0.12);
-      background: rgba(255,255,255,0.07);
-      color: var(--white);
-      font-family: var(--sans);
-      font-size: 0.9rem;
-      outline: none;
-      transition: border-color 0.2s;
-    }
+    /* ── LEAD CAPTURE ── */
+    .lead-capture { background: var(--navy); color: var(--white); }
+    .lead-inner { max-width: 600px; margin: 0 auto; text-align: center; }
+    .lead-inner h2 { font-family: var(--serif); font-size: clamp(1.6rem,3vw,2.2rem); font-weight: 700; margin-bottom: 14px; }
+    .lead-inner p { color: #9A8F85; font-size: 0.95rem; line-height: 1.75; margin-bottom: 32px; }
+    .lead-form { display: flex; flex-direction: column; gap: 12px; }
+    .lead-form input { padding: 13px 18px; border-radius: var(--radius); border: 1px solid rgba(255,255,255,0.12); background: rgba(255,255,255,0.07); color: var(--white); font-family: var(--sans); font-size: 0.9rem; outline: none; transition: border-color 0.2s; }
     .lead-form input::placeholder { color: #6B6560; }
     .lead-form input:focus { border-color: rgba(255,255,255,0.35); }
-    .lead-form button {
-      background: var(--fire);
-      color: var(--white);
-      padding: 14px;
-      border-radius: var(--radius);
-      border: none;
-      font-family: var(--sans);
-      font-weight: 700;
-      font-size: 0.95rem;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
+    .lead-form button { background: var(--fire); color: var(--white); padding: 14px; border-radius: var(--radius); border: none; font-family: var(--sans); font-weight: 700; font-size: 0.95rem; cursor: pointer; transition: background 0.2s; }
     .lead-form button:hover { background: var(--fire-deep); }
-    .lead-disclaimer {
-      margin-top: 14px;
-      font-size: 0.78rem;
-      color: #5A5550;
-    }
+    .lead-disclaimer { margin-top: 14px; font-size: 0.78rem; color: #5A5550; }
+
+    /* ── SHARED BUTTONS ── */
+    .btn-primary { background: var(--fire); color: var(--white); padding: 14px 28px; border-radius: var(--radius); font-weight: 600; font-size: 0.95rem; text-decoration: none; display: inline-block; transition: background 0.2s, transform 0.15s; border: none; cursor: pointer; }
+    .btn-primary:hover { background: var(--fire-deep); transform: translateY(-1px); }
+    .btn-outline { background: transparent; color: var(--white); padding: 14px 28px; border-radius: var(--radius); font-weight: 500; font-size: 0.95rem; text-decoration: none; display: inline-block; border: 1px solid rgba(255,255,255,0.35); transition: border-color 0.2s, background 0.2s; }
+    .btn-outline:hover { border-color: rgba(255,255,255,0.7); background: rgba(255,255,255,0.07); }
 
     /* ── FOOTER ── */
-    footer {
-      background: var(--navy);
-      color: #5A6A7A;
-      text-align: center;
-      padding: 28px 20px;
-      font-size: 0.82rem;
-      border-top: 1px solid rgba(255,255,255,0.07);
-    }
-    footer a {
-      color: #7A7068;
-      text-decoration: none;
-    }
+    footer { background: var(--charcoal); color: #5A6A7A; text-align: center; padding: 28px 20px; font-size: 0.82rem; border-top: 1px solid rgba(255,255,255,0.07); }
+    footer a { color: #7A7068; text-decoration: none; }
     footer a:hover { color: var(--white); }
 
     /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .launch-inner { grid-template-columns: 1fr; gap: 40px; }
+      .launch-right { display: none; }
+      .app-launch-grid { grid-template-columns: 1fr; }
+      .app-launch-right { display: none; }
+      .how-steps { grid-template-columns: 1fr 1fr; }
+      .how-step-arrow { display: none; }
+    }
     @media (max-width: 768px) {
       nav { padding: 0 20px; }
-      nav ul { gap: 18px; }
+      nav ul { gap: 14px; }
       nav ul a { font-size: 0.82rem; }
       section { padding: 60px 20px; }
-      .hero { padding: 60px 20px 56px; }
-      .hero-deadline { gap: 24px; }
+      .stats-strip { padding: 24px 20px; }
+      .how-strip { padding: 60px 20px; }
+      .how-steps { grid-template-columns: 1fr; gap: 24px; }
       .problem-grid { grid-template-columns: 1fr; gap: 16px; }
       .services-grid { grid-template-columns: 1fr; }
-      .map-intro { grid-template-columns: 1fr; gap: 32px; }
-      .app-notify-form input { width: 100%; }
-      .hero-ctas { flex-direction: column; align-items: flex-start; }
+      .map-cards { grid-template-columns: 1fr; }
+      .launch-inner { padding: 60px 20px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- ALERT BAR -->
-  <div class="alert-bar">
-    San Diego homeowners must comply with Zone Zero by <strong>February 2027</strong>. Don't wait — act now.
-  </div>
-
-  <!-- NAV -->
-  <nav>
-    <a href="/index.html">
-      <img src="https://www.sdzonezero.com/logo1.png" alt="San Diego Zone Zero Solutions Logo" />
-    </a>
-    <ul>
-      <li><a href="/index.html">Home</a></li>
-      <li><a href="/howitworks.html">How It Works</a></li>
-      <li><a href="/services.html">Services</a></li>
-      <li><a href="/contact.html">Contact</a></li>
-    </ul>
-  </nav>
-
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-inner">
-      <span class="hero-eyebrow">San Diego's Zone Zero Specialist</span>
-      <h1>Your Home Is Likely in a Fire Zone.<br /><em>Let's Get You Compliant</em> Before February 2027.</h1>
-      <p class="hero-sub">
-        Most San Diego homeowners in the Very High Fire Severity Zone have no idea where to start with Zone Zero.
-      I provide <strong>clear, honest, property-specific guidance</strong> — so you can protect your home,&nbsp; be eligible for insurance discounts, and meet the deadline without the overwhelm.</p>
-      <div class="hero-ctas">
-        <a href="/services.html" class="btn-primary">Book a Property Assessment</a>
-        <a href="#free-guide" class="btn-outline">Get the Free Zone Zero Guide</a>
-      </div>
-      <div class="hero-deadline">
-        <div class="hero-stat">
-          <div class="num">2/3</div>
-          <div class="label">of San Diego properties<br />are in a fire hazard zone</div>
-        </div>
-        <div class="hero-stat">
-          <div class="num">220K+</div>
-          <div class="label">San Diego homeowners<br />impacted by Zone Zero</div>
-        </div>
-        <div class="hero-stat">
-          <div class="num">Feb '27</div>
-          <div class="label">compliance deadline<br />for existing homes</div>
-        </div>
-        <div class="hero-stat">
-          <div class="num">4–40%</div>
-          <div class="label">potential insurance<br />premium reduction</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROBLEM -->
-  <section class="problem">
-    <div class="section-inner">
-      <div class="section-label">The Challenge</div>
-      <h2 class="section-title">Most Homeowners Feel <em>Completely Lost.</em></h2>
-      <p class="section-body">
-        Zone Zero requirements are real, the deadline is firm, and the official guidance is scattered across government websites written in technical language. Here's what we hear every day:
-      </p>
-      <div class="problem-grid">
-        <div class="problem-card">
-          <div class="icon">📋</div>
-          <h3>"I don't even know what Zone Zero means for my specific property."</h3>
-          <p>The rules vary by property type, materials, and location. Checklists don't cut it — you need a property-specific assessment.</p>
-        </div>
-        <div class="problem-card">
-          <div class="icon">🏠</div>
-          <h3>"My insurance company is already asking questions."</h3>
-          <p>Insurers are increasingly scrutinizing fire zone properties. Documented compliance isn't just about the city deadline — it can protect your coverage right now.</p>
-        </div>
-        <div class="problem-card">
-          <div class="icon">🔨</div>
-          <h3>"I don't know where to even begin with the changes."</h3>
-          <p>Zone Zero involves your landscaping, fencing, vents, gutters, and more. Without a clear starting point, most homeowners do nothing — and that's the most expensive mistake of all.</p>
-        </div>
-        <div class="problem-card">
-          <div class="icon">📅</div>
-          <h3>"February 2027 feels far away — but is it?"</h3>
-          <p>Some changes could require permits, contractor scheduling, and material lead times. Waiting longer to start may mean missing the deadline entirely.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PERSONAL / ABOUT STRIP -->
-  <section class="about-strip">
-    <div class="about-strip-inner">
-      <div class="section-label" style="color:#F1948A;">Why Lawrence Started This</div>
-      <blockquote>
-      "I live in the Very High Fire Severity Zone. My backyard sits on the slope of Highway 52 and Regents Road. This isn't abstract for me — it's my home too." </blockquote>
-      <p>
-        When San Diego adopted Zone Zero, I watched my neighbors struggle to find real answers. The official guidance is a starting point, but it doesn't tell you what to actually do at your specific property. The answers are out there, but buried. Most homeowners don't have the time or resources to find them.
-      </p>
-      <p>
-        <strong>San Diego Zone Zero Solutions exists because your neighbors need a trusted local guide, not another confusing document.</strong> I've already helped homeowners like Kate in Poway — walking her property, identifying potential risks, and giving her something she could actually use: a clear record of the progress she'd made. Something to reference herself, and show her insurer. San Diego officials aren't demanding perfection. They want to see that you're making progress — and we help you document every step of it.
-      </p>
-      <div class="sig">— Lawrence, Founder · University City, San Diego</div>
-    </div>
-  </section>
-
-  <!-- SERVICES PREVIEW -->
-  <section class="services">
-    <div class="section-inner">
-      <div class="section-label">What We Offer</div>
-      <h2 class="section-title">From <em>Confused</em> to Compliant — Step by Step.</h2>
-      <p class="section-body">
-        Whether you're just starting to understand your situation or need documentation for your insurer, there's a service designed for exactly where you are.
-      </p>
-      <div class="services-grid">
-        <div class="service-card">
-  <div class="service-badge" style="background: var(--slate);">Coming Soon</div>
-  <div class="service-num">01</div>
-  <h3>Zone Zero Self-Assessment App</h3>
-  <p>Walk through your own property using our guided web app. Answer simple questions, get a personalized compliance report, and receive a prioritized action list — all from your phone or computer.</p>
-  <div class="service-price">$19.99 · Instant access</div>
+<!-- ALERT BAR -->
+<div class="alert-bar">
+  🔥 San Diego homeowners must comply with Zone Zero by <strong>February 2027.</strong> Don&apos;t wait &mdash; your deadline is closer than you think. <a href="https://embrclearzone.app" target="_blank">Check your home now &rarr;</a>
 </div>
-        <div class="service-card featured">
-          <div class="service-badge">Most Popular</div>
-          <div class="service-num">02</div>
-          <h3>Property Walkthrough</h3>
-          <p>Lawrence visits your property in person, walks every zone with you, and delivers a customized compliance checklist tailored to your specific home. The fastest way to get clear on exactly what needs to change.</p>
-          <div class="service-price">From $197 per property</div>
-        </div>
-        <div class="service-card" style="border-color: var(--coastal); border-width: 2px;">
-          <div class="service-badge" style="background: var(--coastal);">Best Value</div>
-          <div class="service-num">03</div>
-          <h3>Concierge Report</h3>
-          <p>Everything in the Walkthrough, plus a detailed written report with photo documentation of your property's current condition and the improvements made. A clear record of your progress — to reference yourself, share with your HOA, and show your insurer that you're taking meaningful steps toward compliance. Because San Diego officials want progress, not perfection.</p>
-          <div class="service-price">From $397 per property</div>
-        </div>
+
+<!-- NAV -->
+<nav>
+  <a href="/index.html">
+    <img src="https://www.sdzonezero.com/logo1.png" alt="San Diego Zone Zero Solutions Logo" />
+  </a>
+  <ul>
+    <li><a href="/index.html">Home</a></li>
+    <li><a href="/howitworks.html">How It Works</a></li>
+    <li><a href="/services.html">Services</a></li>
+    <li><a href="/contact.html">Contact</a></li>
+    <li><a href="https://embrclearzone.app" target="_blank" class="nav-app-btn">🔥 Try the App</a></li>
+  </ul>
+</nav>
+
+<!-- LAUNCH HERO -->
+<section class="launch-hero">
+  <div class="launch-grid"></div>
+  <div class="launch-inner">
+    <div class="launch-left">
+      <div class="launch-announce">
+        <span class="dot"></span>
+        Now Live &mdash; San Diego&apos;s First Zone Zero App
       </div>
-        <div class="services-cta">
-          <a href="/services.html">View full service details including HOA &amp; Property Manager packages →</a>
-        </div>
-    </div>
-  </section>
-
-  <!-- APP TEASER -->
-    <section class="app-teaser">
-    <div class="app-teaser-inner">
-      <div class="app-badge">⚡ Coming Soon</div>
-      <h2>Check Your Home's Zone Zero Compliance — Instantly.</h2>
-      <p>
-        Our self-assessment web app walks you through your property step by step, identifies compliance gaps, and generates a prioritized action report. Available soon for just $19.99.
+      <h1 class="launch-h1">
+        <em>Clear It</em><br />
+        Before It<br />
+        Sparks.
+      </h1>
+      <p class="launch-sub">
+        The first guided Zone Zero compliance tool built for San Diego homeowners.
+        Walk your property, get your <strong>Green, Yellow, or Red home rating</strong>
+        in under 60 minutes &mdash; with a personalized action plan included.
       </p>
-      <form class="app-notify-form" id="appNotifyForm">
-        <input type="email" name="email" placeholder="Enter your email to be notified" required />
-        <button type="submit">Notify Me</button>
-      </form>
-      <div id="appNotifySuccess" style="margin-top: 12px; font-size: 0.85rem; font-weight: 600; color: rgba(255,255,255,0.9);"></div>
-      <div class="app-note">No spam. One email when it launches. That's it.</div>
-    </div>
-  </section>
-
-  <!-- MAP -->
-  <section class="map-section">
-    <div class="section-inner">
-      <div class="section-label">Know Your Risk</div>
-      <h2 class="section-title">Is Your Property in a <em>Fire Hazard Zone?</em></h2>
-      <p class="section-body">
-        Use one of the official tools below to check your property's designation. If you're in a Very High Fire Hazard Severity Zone, Zone Zero compliance applies to you.
-      </p>
-      <div class="map-cards">
-        <div class="map-card">
-          <div class="map-card-icon">🗺️</div>
-          <h3>City of San Diego<br />Fire Hazard Zone Map</h3>
-          <p>The official 2025 updated LRA Fire Hazard Severity Zone map for City of San Diego properties. Search by address to see your exact designation.</p>
-          <a href="https://experience.arcgis.com/experience/27b75b74e4184a99b2223e19bef8d322/" target="_blank" rel="noopener" class="btn-primary">Open City of SD Map →</a>
-        </div>
-        <div class="map-card">
-          <div class="map-card-icon">🔥</div>
-          <h3>CAL FIRE Statewide<br />FHSZ Viewer</h3>
-          <p>The official California State Fire Marshal tool covering all of San Diego County including unincorporated areas, Poway, Escondido, and more.</p>
-          <a href="https://osfm.fire.ca.gov/fhsz" target="_blank" rel="noopener" class="btn-primary">Open CAL FIRE Viewer →</a>
-        </div>
+      <ul class="launch-features">
+        <li>42-item guided walkthrough &mdash; roof, gutters, vents, deck &amp; yard</li>
+        <li>Photo check for each item &mdash; snap a photo, get instant feedback</li>
+        <li>Green &#x1F7E2; / Yellow &#x1F7E1; / Red &#x1F534; color rating &mdash; no confusing scores or numbers</li>
+        <li>Based on California Zone Zero &amp; fire safety guidelines</li>
+        <li>Personalized action plan with plain-English fix instructions</li>
+        <li>Report emailed directly to you for your records</li>
+        <li>N/A options for small lots &mdash; only counts what applies to your home</li>
+        <li>Great for the whole family &mdash; works on iPhone, Android, or any browser</li>
+      </ul>
+      <div class="al-price" style="color:#666; font-size:0.95rem; margin-bottom:20px;">One-time access &nbsp;&bull;&nbsp; <strong style="font-size:1.5rem; color:#f05a28;">$19.99</strong></div>
+      <div class="launch-ctas">
+        <a href="https://embrclearzone.app" target="_blank" class="btn-launch">
+          🔥 Launch the App &mdash; $19.99
+        </a>
+        <a href="/services.html" class="btn-ghost">Book an Inspection</a>
+      </div>
+      <div class="launch-trust">
+        <div class="trust-item">California Zone Zero guidelines</div>
+        <div class="trust-item">Works on iPhone &amp; Android</div>
+        <div class="trust-item">Report for your records</div>
       </div>
     </div>
-  </section>
 
-  <!-- SERVICE AREAS -->
-  <section class="areas">
-    <div class="section-inner">
-      <div class="section-label">Where We Work</div>
-      <h2 class="section-title">Serving San Diego County</h2>
-      <p class="section-body">
-        We serve homeowners throughout San Diego County's Very High Fire Hazard Severity Zones, including:
-      </p>
-      <div class="areas-grid">
-        <span class="area-tag">University City</span>
-        <span class="area-tag">La Jolla</span>
-        <span class="area-tag">Poway</span>
-        <span class="area-tag">Rancho Santa Fe</span>
-        <span class="area-tag">Rancho Peñasquitos</span>
-        <span class="area-tag">Carmel Valley</span>
-        <span class="area-tag">Del Mar</span>
-        <span class="area-tag">Rancho Bernardo</span>
-        <span class="area-tag">Escondido</span>
-        <span class="area-tag">Encinitas</span>
-        <span class="area-tag">Carlsbad</span>
-        <span class="area-tag">El Cajon</span>
-        <span class="area-tag">Chula Vista</span>
-        <span class="area-tag">Clairemont</span>
-        <span class="area-tag">Oceanside</span>
-        <span class="area-tag">Mission Valley</span>
+    <div class="launch-right">
+      <div class="app-preview-card">
+        <div class="apc-bar">
+          <div class="apc-brand">
+            <div class="apc-flame">🔥</div>
+            EMBR CLEARZONE&trade;
+          </div>
+          <div class="apc-badge">&#x1F7E2; Looking Good</div>
+        </div>
+        <div class="apc-body">
+          <div class="apc-zone-label">// Zone 0 &mdash; Ground</div>
+          <div class="apc-item pass">
+            <span class="ic">🌿</span>
+            <span class="txt">All plants removed within 5 feet of house</span>
+            <span class="st">&#x2705;</span>
+          </div>
+          <div class="apc-item pass">
+            <span class="ic">🪵</span>
+            <span class="txt">No wood mulch within 5 feet</span>
+            <span class="st">&#x2705;</span>
+          </div>
+          <div class="apc-item fail">
+            <span class="ic">🚧</span>
+            <span class="txt">Wood fencing within 5 feet of structure</span>
+            <span class="st">&#x274C;</span>
+          </div>
+          <div class="apc-zone-label" style="margin-top:14px;">// Zone 0 &mdash; Roof</div>
+          <div class="apc-item pass">
+            <span class="ic">🏠</span>
+            <span class="txt">Roof material is Class A fire-rated</span>
+            <span class="st">&#x2705;</span>
+          </div>
+          <div class="apc-item pass">
+            <span class="ic">🌬️</span>
+            <span class="txt">Vents have fine metal mesh screens</span>
+            <span class="st">&#x2705;</span>
+          </div>
+          <div class="apc-rating">
+            <span class="r-icon">&#x1F7E2;</span>
+            <div class="r-label">Low Concern</div>
+            <div class="r-sub">Report emailed &bull; Action plan included</div>
+          </div>
+        </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- LEAD CAPTURE -->
-  <section class="lead-capture" id="free-guide">
-    <div class="lead-inner">
-      <h2>Get Your Free Zone Zero Guide</h2>
-      <p>
-        Download our Compliance Checklist PDF guide — written specifically for San Diego homeowners. Understand exactly what Zone Zero requires, what you need to remove, and how to start building your compliance plan today.
-      </p>
-                       <form class="lead-form" id="homepageGuideForm">
-        <input type="text" name="name" placeholder="Your name" required />
-        <input type="email" name="email" placeholder="Your email address" required />
-        <button type="submit">Download the Free Guide</button>
-      </form>
-      <div id="homepageFormSuccess" style="margin-top: 16px; font-weight: 600;"></div>
-      <div class="lead-disclaimer">
-        Your guide and occasional Zone Zero updates relevant to San Diego County homeowners.
+<!-- STATS STRIP -->
+<div class="stats-strip">
+  <div class="stats-inner">
+    <div class="stat-block">
+      <span class="num">220K+</span>
+      <div class="lbl">San Diego homes in fire zone</div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-block">
+      <span class="num">Feb '27</span>
+      <div class="lbl">Compliance deadline</div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-block">
+      <span class="num">4&ndash;40%</span>
+      <div class="lbl">Potential insurance savings</div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-block">
+      <span class="num">$19.99</span>
+      <div class="lbl">One-time app access</div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-block">
+      <span class="num">60 min</span>
+      <div class="lbl">Average walkthrough time</div>
+    </div>
+  </div>
+</div>
+
+<!-- PROBLEM -->
+<section class="problem">
+  <div class="section-inner">
+    <div class="section-label">The Challenge</div>
+    <h2 class="section-title">Most Homeowners Feel <em>Completely Lost.</em></h2>
+    <p class="section-body">
+      Zone Zero requirements are real, the deadline is firm, and the official guidance is scattered across government websites written in technical language. Here&apos;s what we hear every day:
+    </p>
+    <div class="problem-grid">
+      <div class="problem-card">
+        <div class="icon">📋</div>
+        <h3>&ldquo;I don&apos;t even know what Zone Zero means for my specific property.&rdquo;</h3>
+        <p>The rules vary by property type, materials, and location. Checklists don&apos;t cut it &mdash; you need a property-specific assessment.</p>
+      </div>
+      <div class="problem-card">
+        <div class="icon">🏠</div>
+        <h3>&ldquo;My insurance company is already asking questions.&rdquo;</h3>
+        <p>Insurers are increasingly scrutinizing fire zone properties. Documented compliance isn&apos;t just about the city deadline &mdash; it can protect your coverage right now.</p>
+      </div>
+      <div class="problem-card">
+        <div class="icon">🔨</div>
+        <h3>&ldquo;I don&apos;t know where to even begin with the changes.&rdquo;</h3>
+        <p>Zone Zero involves your landscaping, fencing, vents, gutters, and more. Without a clear starting point, most homeowners do nothing &mdash; and that&apos;s the most expensive mistake of all.</p>
+      </div>
+      <div class="problem-card">
+        <div class="icon">📅</div>
+        <h3>&ldquo;February 2027 feels far away &mdash; but is it?&rdquo;</h3>
+        <p>Some changes could require permits, contractor scheduling, and material lead times. Waiting longer to start may mean missing the deadline entirely.</p>
       </div>
     </div>
-  </section>
- 
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const form = document.getElementById('homepageGuideForm');
-      const successDiv = document.getElementById('homepageFormSuccess');
- 
-      if (!form) return;
- 
-      form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        e.stopPropagation();
- 
-        const data = new FormData(form);
- 
-        fetch('https://formspree.io/f/mqeykapb', {
-          method: 'POST',
-          body: data,
-          headers: { 'Accept': 'application/json' }
-        })
-        .then(function(response) {
-          if (response.ok) {
-            form.style.display = 'none';
-            successDiv.style.color = '#f05a28';
-            successDiv.innerHTML = 'Thank you! <a href="SanDiego_Zone_Zero_Compliance_Packet.pdf" target="_blank" style="color:#f05a28; font-weight:700; text-decoration:underline;">Click here to download your free Zone Zero guide →</a>';
-          } else {
-            successDiv.style.color = '#ffffff';
-            successDiv.innerHTML = 'Something went wrong. Please email us at <a href="mailto:info@sdzonezero.com" style="color:#f05a28;">info@sdzonezero.com</a>';
-          }
-        })
-        .catch(function() {
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-strip">
+  <div class="about-strip-inner">
+    <div class="section-label" style="color:#F1948A;">Why Lawrence Started This</div>
+    <blockquote>
+      &ldquo;I live in the Very High Fire Severity Zone. My backyard sits on the slope of Highway 52 and Regents Road. This isn&apos;t abstract for me &mdash; it&apos;s my home too.&rdquo;
+    </blockquote>
+    <p>
+      When San Diego adopted Zone Zero, I watched my neighbors struggle to find real answers. The official guidance is a starting point, but it doesn&apos;t tell you what to actually do at your specific property. The answers are out there, but buried. Most homeowners don&apos;t have the time or resources to find them.
+    </p>
+    <p>
+      <strong>San Diego Zone Zero Solutions exists because your neighbors need a trusted local guide, not another confusing document.</strong> I&apos;ve already helped homeowners in Poway &mdash; walking their property, identifying potential risks, and delivering something they could actually use: a clear record of the progress they&apos;d made. Something to reference later, show their insurer, and contractors. San Diego officials aren&apos;t demanding perfection. They want to see that you&apos;re making progress &mdash; and we help you document every step of it.
+    </p>
+    <div class="sig">&mdash; Lawrence, Founder &middot; University City, San Diego</div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services">
+  <div class="section-inner">
+    <div class="section-label">What We Offer</div>
+    <h2 class="section-title">From <em>Confused</em> to Compliant &mdash; Step by Step.</h2>
+    <p class="section-body">
+      Whether you&apos;re just starting to understand your situation or need documentation for your insurer, there&apos;s a service designed for exactly where you are.
+    </p>
+    <div class="services-grid">
+      <div class="service-card" onclick="window.open('https://embrclearzone.app','_blank')">
+        <div class="service-badge" style="background:#f05a28;">🔥 Now Live!</div>
+        <div class="service-num">01</div>
+        <h3>Zone Zero Self-Assessment App</h3>
+        <p>Walk through your own property using our guided app. Get a personalized Green, Yellow, or Red compliance rating &mdash; all from your phone in under 60 minutes.</p>
+        <div class="service-price">$19.99 &middot; Instant access</div>
+        <a href="https://embrclearzone.app" target="_blank" class="service-link">Launch Embr App &rarr;</a>
+      </div>
+      <div class="service-card featured" onclick="window.location='/services.html'">
+        <div class="service-badge">Most Popular</div>
+        <div class="service-num">02</div>
+        <h3>Property Walkthrough</h3>
+        <p>Lawrence visits your property in person, walks every zone with you, and delivers a customized compliance checklist tailored to your specific home. The fastest way to get clear on exactly what needs to change.</p>
+        <div class="service-price">From $197 per property</div>
+        <a href="/services.html" class="service-link">Learn more &rarr;</a>
+      </div>
+      <div class="service-card" onclick="window.location='/services.html'" style="border-color: var(--coastal); border-width: 2px;">
+        <div class="service-badge" style="background: var(--coastal);">Best Value</div>
+        <div class="service-num">03</div>
+        <h3>Concierge Report</h3>
+        <p>Everything in the Walkthrough, plus a detailed written report with photo documentation. A clear record of your progress &mdash; to share with your HOA, insurer, and contractors.</p>
+        <div class="service-price">From $397 per property</div>
+        <a href="/services.html" class="service-link">Learn more &rarr;</a>
+      </div>
+    </div>
+    <div class="services-cta">
+      <a href="/services.html">View full service details including HOA &amp; Property Manager packages &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- MAP -->
+<section class="map-section">
+  <div class="section-inner">
+    <div class="section-label">Know Your Risk</div>
+    <h2 class="section-title">Is Your Property in a <em>Fire Hazard Zone?</em></h2>
+    <p class="section-body">
+      Use one of the official tools below to check your property&apos;s designation. If you&apos;re in a Very High Fire Hazard Severity Zone, Zone Zero compliance applies to you.
+    </p>
+    <div class="map-cards">
+      <div class="map-card">
+        <div class="map-card-icon">🗺️</div>
+        <h3>City of San Diego<br />Fire Hazard Zone Map</h3>
+        <p>The official 2025 updated LRA Fire Hazard Severity Zone map for City of San Diego properties. Search by address to see your exact designation.</p>
+        <a href="https://experience.arcgis.com/experience/27b75b74e4184a99b2223e19bef8d322/" target="_blank" rel="noopener" class="btn-primary">Open City of SD Map &rarr;</a>
+      </div>
+      <div class="map-card">
+        <div class="map-card-icon">🔥</div>
+        <h3>CAL FIRE Statewide<br />FHSZ Viewer</h3>
+        <p>The official California State Fire Marshal tool covering all of San Diego County including unincorporated areas, Poway, Escondido, and more.</p>
+        <a href="https://osfm.fire.ca.gov/fhsz" target="_blank" rel="noopener" class="btn-primary">Open CAL FIRE Viewer &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AREAS -->
+<section class="areas">
+  <div class="section-inner">
+    <div class="section-label">Where We Work</div>
+    <h2 class="section-title">Serving San Diego County</h2>
+    <p class="section-body">
+      We serve homeowners throughout San Diego County&apos;s Very High Fire Hazard Severity Zones, including:
+    </p>
+    <div class="areas-grid">
+      <span class="area-tag">University City</span>
+      <span class="area-tag">La Jolla</span>
+      <span class="area-tag">Poway</span>
+      <span class="area-tag">Rancho Santa Fe</span>
+      <span class="area-tag">Rancho Pe&ntilde;asquitos</span>
+      <span class="area-tag">Carmel Valley</span>
+      <span class="area-tag">Del Mar</span>
+      <span class="area-tag">Rancho Bernardo</span>
+      <span class="area-tag">Escondido</span>
+      <span class="area-tag">Encinitas</span>
+      <span class="area-tag">Carlsbad</span>
+      <span class="area-tag">El Cajon</span>
+      <span class="area-tag">Chula Vista</span>
+      <span class="area-tag">Clairemont</span>
+      <span class="area-tag">Oceanside</span>
+      <span class="area-tag">Mission Valley</span>
+    </div>
+  </div>
+</section>
+
+<!-- LEAD CAPTURE -->
+<section class="lead-capture" id="free-guide">
+  <div class="lead-inner">
+    <h2>Get Your Free Zone Zero Guide</h2>
+    <p>
+      Download our Compliance Checklist PDF &mdash; written specifically for San Diego homeowners. Understand exactly what Zone Zero requires, what you need to remove, and how to start building your compliance plan today.
+    </p>
+    <form class="lead-form" id="homepageGuideForm">
+      <input type="text" name="name" placeholder="Your name" required />
+      <input type="email" name="email" placeholder="Your email address" required />
+      <button type="submit">Download the Free Guide</button>
+    </form>
+    <div id="homepageFormSuccess" style="margin-top:16px; font-weight:600;"></div>
+    <div class="lead-disclaimer">Your guide and occasional Zone Zero updates relevant to San Diego County homeowners.</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>&copy; 2026 San Diego Zone Zero Solutions &middot; Wildfire Compliance Group LLC &middot; San Diego, California &middot; <a href="mailto:info@sdzonezero.com">info@sdzonezero.com</a></p>
+  <p style="margin-top:8px; font-size:0.75rem; color:#3A4A5A;">Not an official government inspection or certification. Educational assessments based on publicly available Zone Zero and IBHS guidelines.</p>
+</footer>
+
+<script>
+  // Lead capture form
+  document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('homepageGuideForm');
+    const successDiv = document.getElementById('homepageFormSuccess');
+    if (!form) return;
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const data = new FormData(form);
+      fetch('https://formspree.io/f/mqeykapb', {
+        method: 'POST', body: data, headers: { 'Accept': 'application/json' }
+      }).then(function(response) {
+        if (response.ok) {
+          form.style.display = 'none';
+          successDiv.style.color = '#f05a28';
+          successDiv.innerHTML = 'Thank you! <a href="SanDiego_Zone_Zero_Compliance_Packet.pdf" target="_blank" style="color:#f05a28;font-weight:700;text-decoration:underline;">Click here to download your free Zone Zero guide &rarr;</a>';
+        } else {
           successDiv.style.color = '#ffffff';
           successDiv.innerHTML = 'Something went wrong. Please email us at <a href="mailto:info@sdzonezero.com" style="color:#f05a28;">info@sdzonezero.com</a>';
-        });
- 
-        return false;
+        }
+      }).catch(function() {
+        successDiv.style.color = '#ffffff';
+        successDiv.innerHTML = 'Something went wrong. Please email us at <a href="mailto:info@sdzonezero.com" style="color:#f05a28;">info@sdzonezero.com</a>';
       });
+      return false;
     });
-  </script>
-	
-	<script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const appForm = document.getElementById('appNotifyForm');
-      const appSuccess = document.getElementById('appNotifySuccess');
- 
-      if (!appForm) return;
- 
-      appForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        e.stopPropagation();
- 
-        // Show confirmation immediately — before fetch completes
-        appForm.style.display = 'none';
-        appSuccess.innerHTML = "You're on the list! We'll email you the moment it launches.";
- 
-        // Then silently send to Formspree in the background
-        const data = new FormData(appForm);
-        data.append('source', 'App Launch Notification');
- 
-        fetch('https://formspree.io/f/mqeykapb', {
-          method: 'POST',
-          body: data,
-          headers: { 'Accept': 'application/json' }
-        }).catch(function() {
-          // Fail silently — user already saw confirmation
-        });
- 
-        return false;
-      });
-    });
-  </script>
-
-  <!-- FOOTER -->
-  <footer>
-    <p>© 2026 San Diego Zone Zero Solutions · San Diego, California · <a href="mailto:info@sdzonezero.com">info@sdzonezero.com</a></p>
-  </footer>
+  });
+</script>
 
 </body>
 </html>
