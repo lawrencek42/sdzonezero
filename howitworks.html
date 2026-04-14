@@ -458,64 +458,7 @@
     </div>
   </section>
 
-  <!-- LEAD CAPTURE -->
-  <section class="lead-capture" id="free-guide">
-    <div class="lead-inner">
-      <h2>Start With the Free Guide</h2>
-      <p>
-        Download our plain-language PDF — written specifically for San Diego homeowners. Understand what Zone Zero requires and where to start before your visit.
-      </p>
-      <form class="lead-form" id="aboutGuideForm">
-        <input type="text" name="name" placeholder="Your name" required />
-        <input type="email" name="email" placeholder="Your email address" required />
-        <button type="submit">Download the Free Guide</button>
-      </form>
-      <div id="aboutFormSuccess" style="margin-top: 16px; font-weight: 600;"></div>
-      <div class="lead-disclaimer">
-        Your guide and occasional Zone Zero updates relevant to San Diego County homeowners.
-      </div>
-    </div>
-  </section>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const form = document.getElementById('aboutGuideForm');
-      const successDiv = document.getElementById('aboutFormSuccess');
-
-      if (!form) return;
-
-      form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-
-        const data = new FormData(form);
-
-        fetch('https://formspree.io/f/mqeykapb', {
-          method: 'POST',
-          body: data,
-          headers: { 'Accept': 'application/json' }
-        })
-        .then(function(response) {
-          if (response.ok) {
-            form.style.display = 'none';
-            successDiv.style.color = '#f05a28';
-            successDiv.innerHTML = 'Thank you! <a href="SanDiego_Zone_Zero_Compliance_Packet.pdf" target="_blank" style="color:#f05a28; font-weight:700; text-decoration:underline;">Click here to download your free Zone Zero guide →</a>';
-          } else {
-            successDiv.style.color = '#ffffff';
-            successDiv.innerHTML = 'Something went wrong. Please email us at <a href="mailto:info@sdzonezero.com" style="color:#f05a28;">info@sdzonezero.com</a>';
-          }
-        })
-        .catch(function() {
-          successDiv.style.color = '#ffffff';
-          successDiv.innerHTML = 'Something went wrong. Please email us at <a href="mailto:info@sdzonezero.com" style="color:#f05a28;">info@sdzonezero.com</a>';
-        });
-
-        return false;
-      });
-    });
-  </script>
-
-  <!-- FOOTER -->
+   <!-- FOOTER -->
   <footer>
     <p>© 2026 San Diego Zone Zero Solutions · San Diego, California · <a href="mailto:info@sdzonezero.com">info@sdzonezero.com</a> · <a href="/privacy.html">Privacy Policy</a></p>
   </footer>

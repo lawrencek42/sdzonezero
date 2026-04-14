@@ -309,44 +309,6 @@
     </div>
   </div>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const form = document.getElementById('contactForm');
-      const successDiv = document.getElementById('contactFormSuccess');
-
-      if (!form) return;
-
-      form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-
-        const data = new FormData(form);
-
-        fetch('https://formspree.io/f/mqeykapb', {
-          method: 'POST',
-          body: data,
-          headers: { 'Accept': 'application/json' }
-        })
-        .then(function(response) {
-          if (response.ok) {
-            form.style.display = 'none';
-            successDiv.style.color = '#F1948A';
-            successDiv.innerHTML = "Thank you — we'll be in touch within 24 hours. In the meantime, <a href='SanDiego_Zone_Zero_Compliance_Packet.pdf' target='_blank' style='color:#f05a28; font-weight:700; text-decoration:underline;'>download the free Zone Zero guide here.</a>";
-          } else {
-            successDiv.style.color = '#F1948A';
-            successDiv.innerHTML = 'Something went wrong. Please email us at <a href="mailto:info@sdzonezero.com" style="color:#f05a28;">info@sdzonezero.com</a>';
-          }
-        })
-        .catch(function() {
-          successDiv.style.color = '#F1948A';
-          successDiv.innerHTML = 'Something went wrong. Please email us at <a href="mailto:info@sdzonezero.com" style="color:#f05a28;">info@sdzonezero.com</a>';
-        });
-
-        return false;
-      });
-    });
-  </script>
-
   <!-- FOOTER -->
   <footer>
     <p>© 2026 San Diego Zone Zero Solutions · San Diego, California · <a href="mailto:info@sdzonezero.com">info@sdzonezero.com</a> · <a href="/privacy.html">Privacy Policy</a></p>

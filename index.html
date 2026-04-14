@@ -670,57 +670,11 @@
   </div>
 </section>
 
-<!-- LEAD CAPTURE -->
-<section class="lead-capture" id="free-guide">
-  <div class="lead-inner">
-    <h2>Get Your Free Zone Zero Guide</h2>
-    <p>
-      Download our Compliance Checklist PDF &mdash; written specifically for San Diego homeowners. Understand exactly what Zone Zero requires, what you need to remove, and how to start building your compliance plan today.
-    </p>
-    <form class="lead-form" id="homepageGuideForm">
-      <input type="text" name="name" placeholder="Your name" required />
-      <input type="email" name="email" placeholder="Your email address" required />
-      <button type="submit">Download the Free Guide</button>
-    </form>
-    <div id="homepageFormSuccess" style="margin-top:16px; font-weight:600;"></div>
-    <div class="lead-disclaimer">Your guide and occasional Zone Zero updates relevant to San Diego County homeowners.</div>
-  </div>
-</section>
-
 <!-- FOOTER -->
 <footer>
   <p>&copy; 2026 San Diego Zone Zero Solutions &middot; Wildfire Compliance Group LLC &middot; San Diego, California &middot; <a href="mailto:info@sdzonezero.com">info@sdzonezero.com</a> &middot; <a href="/privacy.html">Privacy Policy</a></p>
   <p style="margin-top:8px; font-size:0.75rem; color:#3A4A5A;">Not an official government inspection or certification. Educational assessments based on publicly available Zone Zero and IBHS guidelines.</p>
 </footer>
-
-<script>
-  // Lead capture form
-  document.addEventListener('DOMContentLoaded', function() {
-    const form = document.getElementById('homepageGuideForm');
-    const successDiv = document.getElementById('homepageFormSuccess');
-    if (!form) return;
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      const data = new FormData(form);
-      fetch('https://formspree.io/f/mqeykapb', {
-        method: 'POST', body: data, headers: { 'Accept': 'application/json' }
-      }).then(function(response) {
-        if (response.ok) {
-          form.style.display = 'none';
-          successDiv.style.color = '#f05a28';
-          successDiv.innerHTML = 'Thank you! <a href="SanDiego_Zone_Zero_Compliance_Packet.pdf" target="_blank" style="color:#f05a28;font-weight:700;text-decoration:underline;">Click here to download your free Zone Zero guide &rarr;</a>';
-        } else {
-          successDiv.style.color = '#ffffff';
-          successDiv.innerHTML = 'Something went wrong. Please email us at <a href="mailto:info@sdzonezero.com" style="color:#f05a28;">info@sdzonezero.com</a>';
-        }
-      }).catch(function() {
-        successDiv.style.color = '#ffffff';
-        successDiv.innerHTML = 'Something went wrong. Please email us at <a href="mailto:info@sdzonezero.com" style="color:#f05a28;">info@sdzonezero.com</a>';
-      });
-      return false;
-    });
-  });
-</script>
 
 </body>
 </html>
