@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy | San Diego Zone Zero Solutions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ember: #E8390E;
+  --ember-dark: #B52D0A;
+  --coal: #0F0F0F;
+  --ash: #1A1A1A;
+  --smoke: #252525;
+  --gray: #777777;
+  --mid-gray: #999999;
+  --light-gray: #C8C4BE;
+  --white: #F5F0EB;
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+  --font-mono: 'DM Mono', monospace;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-body); background: var(--coal); color: var(--white); font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+nav { background: var(--ash); border-bottom: 1px solid rgba(255,255,255,0.06); padding: 16px 40px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.nav-brand { font-family: var(--font-display); font-size: 1.4rem; letter-spacing: 0.06em; color: var(--white); text-decoration: none; display: flex; align-items: center; gap: 10px; }
+.nav-flame { width: 32px; height: 32px; background: var(--ember); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px; box-shadow: 0 0 16px rgba(232,57,14,0.5); }
+.nav-brand span { color: var(--ember); }
+.nav-back { font-family: var(--font-mono); font-size: 0.75rem; color: var(--gray); text-decoration: none; letter-spacing: 0.08em; transition: color 0.2s; }
+.nav-back:hover { color: var(--ember); }
+.hero { background: var(--ash); border-bottom: 1px solid rgba(232,57,14,0.15); padding: 56px 40px 48px; position: relative; overflow: hidden; }
+.hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 100% at 100% 50%, rgba(232,57,14,0.07) 0%, transparent 70%); pointer-events: none; }
+.hero-inner { max-width: 800px; margin: 0 auto; position: relative; }
+.hero-tag { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ember); margin-bottom: 14px; }
+.hero h1 { font-family: var(--font-display); font-size: clamp(2.4rem, 6vw, 4rem); letter-spacing: 0.04em; line-height: 1; margin-bottom: 16px; }
+.hero-meta { font-family: var(--font-mono); font-size: 0.8rem; color: var(--gray); letter-spacing: 0.06em; }
+.hero-meta span { color: var(--ember); }
+.content { max-width: 800px; margin: 0 auto; padding: 56px 40px 80px; }
+.toc { background: var(--ash); border: 1px solid rgba(255,255,255,0.06); border-left: 3px solid var(--ember); border-radius: 0 8px 8px 0; padding: 24px 28px; margin-bottom: 48px; }
+.toc-title { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ember); margin-bottom: 14px; }
+.toc ol { list-style: none; counter-reset: toc; display: flex; flex-direction: column; gap: 6px; }
+.toc ol li { counter-increment: toc; }
+.toc ol li a { color: var(--light-gray); text-decoration: none; font-size: 0.9rem; transition: color 0.2s; display: flex; align-items: center; gap: 10px; }
+.toc ol li a::before { content: counter(toc, decimal-leading-zero); font-family: var(--font-mono); font-size: 0.7rem; color: var(--ember); flex-shrink: 0; }
+.toc ol li a:hover { color: var(--white); }
+.policy-section { margin-bottom: 48px; scroll-margin-top: 80px; }
+.section-num { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ember); margin-bottom: 8px; }
+.policy-section h2 { font-family: var(--font-display); font-size: 1.6rem; letter-spacing: 0.04em; color: var(--white); margin-bottom: 18px; padding-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.06); }
+.policy-section p { font-size: 0.95rem; color: var(--light-gray); line-height: 1.8; margin-bottom: 14px; }
+.policy-section p strong { color: var(--white); font-weight: 600; }
+.policy-section ul { list-style: none; margin: 10px 0 16px 0; display: flex; flex-direction: column; gap: 7px; }
+.policy-section ul li { font-size: 0.9rem; color: var(--light-gray); line-height: 1.7; padding-left: 18px; position: relative; }
+.policy-section ul li::before { content: '—'; position: absolute; left: 0; color: var(--ember); font-size: 0.8rem; }
+.callout { background: rgba(232,57,14,0.07); border: 1px solid rgba(232,57,14,0.2); border-radius: 8px; padding: 18px 22px; margin: 16px 0; }
+.callout p { font-size: 0.88rem !important; color: var(--light-gray) !important; margin-bottom: 0 !important; }
+.callout p strong { color: var(--white) !important; }
+.notice-box { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 16px 20px; margin: 16px 0; }
+.notice-box p { font-size: 0.85rem !important; color: var(--light-gray) !important; margin-bottom: 0 !important; font-style: italic; }
+.contact-card { background: var(--ash); border: 1px solid rgba(255,255,255,0.07); border-radius: 10px; padding: 24px 28px; margin-top: 16px; }
+.contact-card p { font-size: 0.88rem; color: var(--light-gray); margin-bottom: 8px !important; }
+.contact-card a { color: var(--ember); text-decoration: none; }
+.contact-card a:hover { text-decoration: underline; }
+footer { background: var(--ash); border-top: 1px solid rgba(255,255,255,0.06); padding: 28px 40px; text-align: center; }
+footer p { font-size: 0.8rem; color: var(--gray); line-height: 1.6; }
+footer a { color: var(--ember); text-decoration: none; }
+.rule { border: none; border-top: 1px solid rgba(255,255,255,0.05); margin: 48px 0; }
+@media (max-width: 640px) {
+  nav { padding: 14px 20px; }
+  .hero { padding: 40px 20px 36px; }
+  .content { padding: 40px 20px 60px; }
+  footer { padding: 24px 20px; }
+}
+
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-brand">
+    <div class="nav-flame" aria-hidden="true">&#x1F525;</div>
+    SD <span>ZONE ZERO</span>
+  </a>
+  <a href="/" class="nav-back">&larr; Back to Home</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">// Legal</div>
+    <h1>PRIVACY POLICY</h1>
+    <div class="hero-meta">
+      Effective date: <span>April 13, 2026</span> &nbsp;&middot;&nbsp; Last updated: <span>April 13, 2026</span>
+    </div>
+  </div>
+</div>
+
+<div class="content">
+
+  <div class="policy-section">
+    <p>This Privacy Policy describes how <strong>SD <span>ZONE ZERO</span></strong> (&ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;), a service of <strong>Wildfire Compliance Group LLC</strong>, collects, uses, and protects information when you use our services at <strong>sdzonezero.com</strong>.</p>
+    <p>By using our services, you agree to the practices described in this Privacy Policy. If you do not agree, please do not use our services.</p>
+    <div class="notice-box">
+      <p><strong>Notice at Collection (California Law):</strong> We collect your name, email address, property address (Sensitive Personal Information under California law), and assessment data solely to provide your Zone Zero compliance service. We do not sell this information. See Sections 1, 5, and 9 for full details.</p>
+    </div>
+    <div class="callout">
+      <p><strong>Plain-language summary:</strong> We collect your name, email, address, and assessment information so we can deliver your compliance service. We do not sell your personal contact information to third parties. Your anonymized assessment data may be used in aggregate for wildfire safety research with your explicit consent.</p>
+    </div>
+  </div>
+
+  <div class="toc">
+    <div class="toc-title">// Contents</div>
+    <ol>
+      <li><a href="#info-collect">Information We Collect</a></li>
+      <li><a href="#how-use">How We Use Your Information</a></li>
+      <li><a href="#data-sharing">Data Sharing &amp; Third Parties</a></li>
+      <li><a href="#payment">Payment Information</a></li>
+      <li><a href="#data-consent">Assessment Data &amp; Research Consent</a></li>
+      <li><a href="#retention">Data Retention</a></li>
+      <li><a href="#security">Data Security</a></li>
+      <li><a href="#rights">Your Rights &amp; Choices</a></li>
+      <li><a href="#ccpa">California Privacy Rights (CCPA/CPRA)</a></li>
+      <li><a href="#children">Children&rsquo;s Privacy</a></li>
+      <li><a href="#changes">Changes to This Policy</a></li>
+      <li><a href="#contact">Contact Us</a></li>
+    </ol>
+  </div>
+
+  <div class="policy-section" id="info-collect">
+    <div class="section-num">// 01</div>
+    <h2>Information We Collect</h2>
+    <p>We collect information you provide directly when using our services:</p>
+    <ul>
+      <li><strong>Identity information:</strong> First name, last name</li>
+      <li><strong>Contact information:</strong> Email address, phone number (optional)</li>
+      <li><strong>Property address (Sensitive Personal Information):</strong> Street address, city, state, ZIP code. Under California law, precise home addresses may be classified as Sensitive Personal Information. We collect your property address solely to provide the requested compliance assessment service and, with your separate consent, for anonymized community fire risk research.</li>
+
+      <li><strong>Assessment data:</strong> Information you share during a professional walkthrough or inquiry, including property conditions and compliance questions</li>
+      <li><strong>Consent record:</strong> Whether you agreed to our data research consent</li>
+    </ul>
+    <p>We use <strong>essential functional cookies</strong> to manage your payment session and ensure the service functions correctly. We do not use tracking or advertising cookies.</p>
+    <p>We may also automatically collect limited technical data such as browser type and device type for service functionality purposes only.</p>
+  </div>
+
+  <div class="policy-section" id="how-use">
+    <div class="section-num">// 02</div>
+    <h2>How We Use Your Information</h2>
+    <p>We use the information we collect to:</p>
+    <ul>
+      <li>Process your request and deliver your Zone Zero compliance service</li>
+      <li>Generate and send your personalized compliance report to the address you provide</li>
+      <li>Send you a copy of your results for your records</li>
+      <li>Respond to questions or support requests you send us</li>
+      <li>Notify you of relevant Zone Zero law updates or grant program developments that may affect your property (you may opt out at any time)</li>
+      <li>With your explicit consent, use anonymized and aggregated assessment data for wildfire safety research and community fire risk reporting</li>
+    </ul>
+    <p>We do not use your information for automated decision-making or profiling beyond generating your compliance assessment results.</p>
+  </div>
+
+  <div class="policy-section" id="data-sharing">
+    <div class="section-num">// 03</div>
+    <h2>Data Sharing &amp; Third Parties</h2>
+    <p>We do not sell your personal contact information. We share your data only in the following limited circumstances:</p>
+    <ul>
+      <li><strong>Stripe:</strong> Payment processing for professional assessment services, operating under their own privacy policy at stripe.com/privacy</li>
+      <li><strong>Formspree:</strong> Form submission processing used to route contact and inquiry data to our internal systems</li>
+      <li><strong>Google Workspace:</strong> Our business email and data storage platform, used to receive and retain your assessment data and correspondence</li>
+      <li><strong>Legal compliance:</strong> We may disclose information if required by law, court order, or government authority</li>
+    </ul>
+    <p>All third-party service providers are engaged under terms that restrict their use of your data to providing services on our behalf. They may not use your data for their own marketing purposes.</p>
+    <div class="callout">
+      <p><strong>We will never sell, rent, or trade your name, email, phone number, or property address to insurance companies, contractors, real estate agents, or any other third party for marketing purposes.</strong></p>
+    </div>
+  </div>
+
+
+  <div class="policy-section" id="payment">
+    <div class="section-num">// 04</div>
+    <h2>Payment Information</h2>
+    <p>If you purchase a professional assessment service, all payment processing is handled by <strong>Stripe, Inc.</strong>, a PCI-compliant payment processor. Your payment card information is transmitted directly to Stripe and is never stored on our servers.</p>
+    <p>We do not have access to your full card number, CVV, or billing information beyond what you voluntarily provide in the contact form.</p>
+  </div>
+
+  <div class="policy-section" id="data-consent">
+    <div class="section-num">// 05</div>
+    <h2>Assessment Data &amp; Research Consent</h2>
+    <p>During the service process, we ask for your optional consent to use your assessment findings &mdash; including your property address and compliance data &mdash; in <strong>anonymized, aggregated form</strong> for wildfire safety research and community fire risk reporting.</p>
+    <p>If you provide this consent:</p>
+    <ul>
+      <li>Your data is anonymized before any research use &mdash; your name, email, and phone are never included</li>
+      <li>Aggregated data may be used to identify compliance trends by neighborhood or ZIP code</li>
+      <li>Your property address may appear in aggregate fire risk mapping without any personal identifiers attached</li>
+      <li>We may share anonymized findings with fire safety researchers, Fire Safe Councils, or public agencies</li>
+    </ul>
+    <p>If you do not provide consent, your data is used solely to deliver your personal service and is not included in any research or aggregated reporting.</p>
+    <p>You may withdraw your research consent at any time by contacting us at <strong>info@sdzonezero.com</strong>.</p>
+  </div>
+
+  <div class="policy-section" id="retention">
+    <div class="section-num">// 06</div>
+    <h2>Data Retention</h2>
+    <p>We retain your personal information for as long as necessary to provide our services and comply with legal obligations. Specifically:</p>
+    <ul>
+      <li>Assessment records and reports are retained for up to <strong>3 years</strong> to allow you to reference your compliance history</li>
+      <li>Payment records are retained as required by financial regulations (typically 7 years)</li>
+      <li>Email communications are retained in our business email system for up to 2 years</li>
+    </ul>
+    <p>You may request deletion of your personal data at any time by contacting us (see Section 8).</p>
+  </div>
+
+  <div class="policy-section" id="security">
+    <div class="section-num">// 07</div>
+    <h2>Data Security</h2>
+    <p>We implement reasonable technical and organizational measures to protect your personal information from unauthorized access, disclosure, or loss. These include:</p>
+    <ul>
+      <li>HTTPS encryption for all data transmission on sdzonezero.com</li>
+      <li>Stripe&rsquo;s PCI-compliant infrastructure for all payment processing</li>
+      <li>Google Workspace security standards for business email and data storage</li>
+      <li>Access to personal data limited to authorized personnel only</li>
+    </ul>
+    <p>No method of transmission over the internet is 100% secure. While we take reasonable precautions, we cannot guarantee absolute security of your data.</p>
+  </div>
+
+  <div class="policy-section" id="rights">
+    <div class="section-num">// 08</div>
+    <h2>Your Rights &amp; Choices</h2>
+    <p>You have the following rights regarding your personal information:</p>
+    <ul>
+      <li><strong>Access:</strong> Request a copy of the personal data we hold about you</li>
+      <li><strong>Correction:</strong> Request correction of inaccurate or incomplete data</li>
+      <li><strong>Deletion:</strong> Request deletion of your personal data (subject to legal retention requirements)</li>
+      <li><strong>Opt-out of marketing:</strong> Unsubscribe from any email communications using the unsubscribe link in any email, or by contacting us directly</li>
+      <li><strong>Withdraw research consent:</strong> Opt out of anonymized data research at any time by contacting us</li>
+    </ul>
+    <p>To exercise any of these rights, contact us at <strong>info@sdzonezero.com</strong>. We will respond within 30 days.</p>
+  </div>
+
+  <div class="policy-section" id="ccpa">
+    <div class="section-num">// 09</div>
+    <h2>California Privacy Rights (CCPA/CPRA)</h2>
+    <p>As a California business serving California residents, we comply with the California Consumer Privacy Act (CCPA) and California Privacy Rights Act (CPRA). California residents have the right to:</p>
+    <ul>
+      <li>Know what personal information we collect and how it is used</li>
+      <li>Request deletion of personal information we have collected</li>
+      <li>Opt out of the sale of personal information &mdash; <strong>we do not sell personal information</strong></li>
+      <li>Non-discrimination for exercising your CCPA/CPRA rights</li>
+      <li><strong>Right to Limit Use of Sensitive Personal Information:</strong> You have the right to limit our use of your sensitive personal information (including your property address) to only what is necessary to perform our services. We do not use your property address for any purpose other than generating your compliance report and, with your separate explicit consent, for anonymized community fire risk research.</li>
+    </ul>
+    <p>To submit a CCPA/CPRA request, contact us at <strong>info@sdzonezero.com</strong> with the subject line &ldquo;CCPA Request.&rdquo; We will verify your identity and respond within 45 days as required by law.</p>
+  </div>
+
+  <div class="policy-section" id="children">
+    <div class="section-num">// 10</div>
+    <h2>Children&rsquo;s Privacy</h2>
+    <p>Our services are intended for use by homeowners and adults aged 18 and older. We do not knowingly collect personal information from children under the age of 13. If we become aware that we have collected information from a child under 13, we will delete it promptly.</p>
+    <p>If you believe a child has provided us with personal information, please contact us at <strong>info@sdzonezero.com</strong>.</p>
+  </div>
+
+  <div class="policy-section" id="changes">
+    <div class="section-num">// 11</div>
+    <h2>Changes to This Policy</h2>
+    <p>We may update this Privacy Policy from time to time to reflect changes in our practices, the law, or our services. When we make material changes, we will update the &ldquo;Last updated&rdquo; date at the top of this page.</p>
+    <p>We encourage you to review this page periodically. Your continued use of our services after any changes constitutes your acceptance of the updated policy.</p>
+  </div>
+
+  <div class="policy-section" id="contact">
+    <div class="section-num">// 12</div>
+    <h2>Contact Us</h2>
+    <p>If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us:</p>
+    <div class="contact-card">
+      <p><strong>Wildfire Compliance Group LLC</strong><br>Operating as San Diego Zone Zero Solutions</p>
+      <p>Email: <a href="mailto:info@sdzonezero.com">info@sdzonezero.com</a></p>
+      <p>Website: <a href="https://sdzonezero.com">sdzonezero.com</a></p>
+      <p>San Diego, California</p>
+    </div>
+  </div>
+
+  <hr class="rule">
+
+  <div class="policy-section">
+    <p style="font-size: 0.82rem; color: var(--gray); font-style: italic;">
+      San Diego Zone Zero Solutions is operated by Wildfire Compliance Group LLC. Our Zone Zero assessments are independent educational services based on publicly available wildfire safety guidance including the IBHS Wildfire Prepared Home Technical Standard and California Department of Insurance Safer from Wildfires framework. This service is not an official government inspection or certification. Always verify current regulations with the City of San Diego Fire-Rescue Department or CAL FIRE.
+    </p>
+  </div>
+
+</div>
+
+<footer>
+  <p>&copy; 2026 Wildfire Compliance Group LLC &middot; SD <span>ZONE ZERO</span> &middot; <a href="mailto:info@sdzonezero.com">info@sdzonezero.com</a></p>
+  <p style="margin-top: 6px;">Not an official government inspection or certification.</p>
+</footer>
+
+</body>
+</html>
