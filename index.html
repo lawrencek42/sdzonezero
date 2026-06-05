@@ -360,6 +360,32 @@
     footer a { color: #7A7068; text-decoration: none; }
     footer a:hover { color: var(--white); }
 
+    /* ── CFSC BADGE ── */
+    .cfsc-badge-wrap {
+      margin-top: 28px; padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+    }
+    .cfsc-badge-wrap img {
+      height: 52px; width: auto; opacity: 0.92;
+      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3));
+    }
+    .cfsc-badge-text {
+      font-size: 0.75rem; color: #7A7068; line-height: 1.5; max-width: 280px;
+    }
+
+    /* ── HAMBURGER NAV ── */
+    .nav-toggle {
+      display: none; background: none; border: none; cursor: pointer;
+      padding: 4px; flex-direction: column; gap: 5px;
+    }
+    .nav-toggle span {
+      display: block; width: 24px; height: 2px;
+      background: var(--charcoal); border-radius: 2px;
+      transition: all 0.3s;
+    }
+    .nav-menu { display: flex; }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
       .launch-inner { grid-template-columns: 1fr; gap: 40px; }
@@ -370,9 +396,23 @@
       .how-step-arrow { display: none; }
     }
     @media (max-width: 768px) {
-      nav { padding: 0 20px; }
-      nav ul { gap: 14px; }
-      nav ul a { font-size: 0.82rem; }
+      nav { padding: 0 20px; height: auto; min-height: 64px; flex-wrap: wrap; }
+      .nav-toggle { display: flex; }
+      .nav-menu {
+        display: none; width: 100%; flex-direction: column;
+        padding: 12px 0 16px; border-top: 1px solid var(--border);
+        gap: 0;
+      }
+      .nav-menu.open { display: flex; }
+      .nav-menu li { width: 100%; }
+      .nav-menu a {
+        display: block; padding: 10px 4px;
+        font-size: 0.95rem !important; border-bottom: 1px solid var(--border);
+      }
+      .nav-menu .nav-app-btn {
+        display: inline-block; margin-top: 12px;
+        border-radius: 40px !important; border-bottom: none !important;
+      }
       section { padding: 60px 20px; }
       .stats-strip { padding: 24px 20px; }
       .how-strip { padding: 60px 20px; }
@@ -396,7 +436,10 @@
   <a href="/index.html">
     <img src="https://www.sdzonezero.com/logo1.png" alt="San Diego Zone Zero Solutions Logo" />
   </a>
-  <ul>
+  <button class="nav-toggle" onclick="this.nextElementSibling.classList.toggle('open')" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-menu">
     <li><a href="/index.html">Home</a></li>
     <li><a href="/howitworks.html">How It Works</a></li>
     <li><a href="/services.html">Services</a></li>
@@ -445,6 +488,10 @@
         <div class="trust-item">California Zone Zero guidelines</div>
         <div class="trust-item">Works on iPhone &amp; Android</div>
         <div class="trust-item">Report for your records</div>
+      </div>
+      <div class="cfsc-badge-wrap">
+        <img src="https://www.sdzonezero.com/cfsc-badge.png" alt="Fire Safe Business Directory — Reviewed" />
+        <div class="cfsc-badge-text">San Diego Zone Zero Solutions is a reviewed participant of the Fire Safe Business Directory, a program of the California Fire Safe Council.</div>
       </div>
     </div>
 
